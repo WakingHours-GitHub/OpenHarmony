@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:id="$+id:text1"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="文本框"
+        />
+<!--    单击按钮   -->
+    <Button
+        ohos:id="$+id:but1"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="点我"
+        ohos:text_size="200"
+        ohos:background_element="red"
+        />
+
+<!--    双击按钮    -->
+    <Text
+        ohos:id="$+id:text2"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="双击按钮, 我就会变"
+        ohos:text_size="100"
+        />
+
+    <Button
+        ohos:id="$+id:but2"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="双击按钮"
+        ohos:text_size="100"
+        ohos:background_element="red"
+        />
+
+
+<!--    长按按钮    -->
+    <Text
+        ohos:id="$+id:text3"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="长按"
+        ohos:text_size="100"
+
+    />
+    <Button
+        ohos:id="$+id:but3"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="长按按钮"
+        ohos:text_size="100"
+        ohos:background_element="red"
+        />
+
+
+
+<!--    滑动事件    -->
+
+
+
+
+</DirectionalLayout>

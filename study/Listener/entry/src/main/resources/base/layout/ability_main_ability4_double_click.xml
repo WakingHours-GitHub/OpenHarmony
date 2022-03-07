@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--因为点击了整个页面图片就会变化, 所以我们给dl设置id, 使其可以被find-->
+<DirectionalLayout
+    ohos:id="$+id:dl"
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+
+    <!--  image_src就是图片的源文件地址, 引用media文件夹中的内容  -->
+    <!--  cyan是青色  -->
+    <Image
+        ohos:id="$+id:img"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:image_src="$media:white"
+        ohos:background_element="cyan"
+        />
+
+
+</DirectionalLayout>

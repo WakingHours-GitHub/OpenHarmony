@@ -1,0 +1,64 @@
+{
+  "string": [
+    {
+      "name": "entry_MainAbility",
+      "value": "entry_MainAbility"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_MainAbility2_touch",
+      "value": "entry_MainAbility2_touch"
+    },
+    {
+      "name": "mainability2_touch_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability2_touch_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_MainAbility3_more_button_case",
+      "value": "entry_MainAbility3_more_button_case"
+    },
+    {
+      "name": "mainability3_more_button_case_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability3_more_button_case_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_MainAbility4_double_click",
+      "value": "entry_MainAbility4_double_click"
+    },
+    {
+      "name": "mainability4_double_click_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability4_double_click_HelloWorld",
+      "value": "你好，世界"
+    },
+    {
+      "name": "entry_MainAbility4_homework_double_click",
+      "value": "entry_MainAbility4_homework_double_click"
+    },
+    {
+      "name": "mainability4_homework_double_click_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability4_homework_double_click_HelloWorld",
+      "value": "你好，世界"
+    }
+  ]
+}

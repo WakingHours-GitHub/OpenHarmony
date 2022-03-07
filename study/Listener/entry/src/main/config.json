@@ -1,0 +1,90 @@
+{
+  "app": {
+    "bundleName": "com.example.study",   "vendor": "example",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.study",
+    "name": ".MyApplication",
+    "mainAbility": "com.example.study.MainAbility",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv",
+      "wearable",
+      "car"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "abilities": [
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.study.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.study.MainAbility2_touch",
+        "icon": "$media:icon",
+        "description": "$string:mainability2_touch_description",
+        "label": "$string:entry_MainAbility2_touch",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.study.MainAbility3_more_button_case",
+        "icon": "$media:icon",
+        "description": "$string:mainability3_more_button_case_description",
+        "label": "$string:entry_MainAbility3_more_button_case",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.study.MainAbility4_double_click",
+        "icon": "$media:icon",
+        "description": "$string:mainability4_double_click_description",
+        "label": "$string:entry_MainAbility4_double_click",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.study.MainAbility4_homework_double_click",
+        "icon": "$media:icon",
+        "description": "$string:mainability4_homework_double_click_description",
+        "label": "$string:entry_MainAbility4_homework_double_click",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}

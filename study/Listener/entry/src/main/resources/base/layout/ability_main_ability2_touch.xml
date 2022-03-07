@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    触控事件, 我们要找到布局对象    -->
+<DirectionalLayout
+    ohos:id="$+id:dl1"
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:id="$+id:text1"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:background_element="$graphic:background_ability_main_ability2_touch"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="状态"
+        ohos:text_size="40vp"
+        />
+
+    <Text
+        ohos:id="$+id:text2"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="坐标"
+        ohos:text_size="50"
+    />
+    <Text
+        ohos:id="$+id:text3"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="滑动"
+        ohos:text_size="100"
+        />
+
+</DirectionalLayout >
