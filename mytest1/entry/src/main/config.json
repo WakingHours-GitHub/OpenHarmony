@@ -1,0 +1,60 @@
+{
+  "app": {
+    "bundleName": "com.example.mytest01",
+    "vendor": "example",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.mytest01",
+    "name": ".MyApplication",
+    "mainAbility": "com.example.mytest01.MainAbility",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv",
+      "wearable",
+      "car"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "visible": true,
+        "name": "com.example.mytest01.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.mytest01.SecondAbility",
+        "icon": "$media:icon",
+        "description": "$string:secondability_description",
+        "label": "$string:entry_SecondAbility",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}

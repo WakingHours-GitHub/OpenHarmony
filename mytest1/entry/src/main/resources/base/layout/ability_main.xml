@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical"
+    ohos:background_element="$media:test"
+    >
+    <!--登录页面-->
+    <Text
+        ohos:id="$+id:text_helloworld"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:padding="10vp"
+        ohos:background_element="$graphic:background_ability_main"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="登录界面"
+        ohos:text_size="40vp"
+        />
+
+    <!--    布局    -->
+    <DirectionalLayout
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:background_element="$graphic:background_login"
+        ohos:orientation="horizontal"
+        >
+        <TextField
+            ohos:height="match_parent"
+            ohos:width="match_parent"
+            ohos:left_margin="10vp"
+            ohos:hint="范玮嘉 "
+            ohos:hint_color="#000000"
+            ohos:text_size="30fp"
+            />
+
+    </DirectionalLayout>
+    <DirectionalLayout
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:background_element="$graphic:background_login"
+        ohos:margin="20vp"
+        ohos:orientation="horizontal"
+        >
+        <TextField
+            ohos:height="match_parent"
+            ohos:width="match_parent"
+            ohos:hint="201923020986 "
+            ohos:hint_color="#000000"
+            ohos:text_size="30fp"
+            />
+
+    </DirectionalLayout>
+    <Button
+        ohos:id="$+id:but1"
+        ohos:height="50vp"
+        ohos:width="match_parent"
+        ohos:background_element="$graphic:background_button"
+        ohos:layout_alignment="center"
+        ohos:text_size="40fp"
+        ohos:text="登录"
+        />
+
+</DirectionalLayout>
