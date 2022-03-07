@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:background_element="$media:ruishi"
+    ohos:orientation="vertical"
+    ohos:total_weight="10"
+    >
+
+
+
+    <DirectionalLayout
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:orientation="vertical"
+        ohos:alignment="center"
+        ohos:weight="6"
+        ohos:total_weight="10"
+
+        >
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:orientation="vertical"
+            ohos:alignment="center"
+            ohos:weight="6"
+
+            >
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text_alignment="horizontal_center"
+                ohos:text="交个锤子有限朋友公司"
+                ohos:text_size="100"
+                ohos:text_color="white"
+
+                />
+            <Image
+                ohos:height="300"
+                ohos:width="300"
+                ohos:right_margin="10"
+                ohos:image_src="$media:laoluo"
+
+                />
+        </DirectionalLayout>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:orientation="vertical"
+            ohos:alignment="center"
+            ohos:weight="4"
+
+            >
+            <TextField
+                ohos:height="match_content"
+                ohos:width="800"
+                ohos:background_element="$graphic:input_textfied"
+                ohos:text_alignment="center"
+                ohos:bottom_margin="15"
+                ohos:text="请输入用户名:"
+                ohos:text_size="100"
+                ohos:text_color="white"
+
+                />
+            <TextField
+                ohos:height="match_content"
+                ohos:width="800"
+                ohos:background_element="$graphic:input_textfied"
+                ohos:text_alignment="center"
+                ohos:text="请输入密码:"
+                ohos:text_size="100"
+                ohos:text_color="white"
+                />
+        </DirectionalLayout>
+
+    </DirectionalLayout>
+
+
+    <DirectionalLayout
+        ohos:height="match_parent"
+        ohos:width="match_content"
+        ohos:orientation="horizontal"
+        ohos:total_weight="2"
+        ohos:weight="4"
+
+        >
+        <Button
+            ohos:id="$+id:but_login"
+            ohos:height="match_content"
+            ohos:width="350"
+            ohos:background_element="$graphic:background_button"
+            ohos:weight="1"
+            ohos:text="登陆"
+            ohos:text_size="100"
+            ohos:text_color="white"
+            />
+
+        <Button
+            ohos:id="$+id:but_register"
+            ohos:height="match_content"
+            ohos:width="350"
+            ohos:background_element="$graphic:background_button"
+            ohos:weight="1"
+            ohos:left_margin="15vp"
+            ohos:text="注册"
+            ohos:text_size="100"
+            ohos:text_color="white"
+            />
+
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:orientation="vertical"
+
+        >
+        <Text
+            ohos:id="$+id:text_status"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:text="离谱"
+            ohos:text_size="100"
+            ohos:text_color="white"
+
+            />
+
+
+    </DirectionalLayout>
+
+
+
+</DirectionalLayout>
