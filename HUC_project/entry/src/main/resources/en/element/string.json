@@ -11,6 +11,18 @@
     {
       "name": "mainability_HelloWorld",
       "value": "Hello World"
+    },
+    {
+      "name": "entry_MainAbility2_login",
+      "value": "entry_MainAbility2_login"
+    },
+    {
+      "name": "mainability2_login_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability2_login_HelloWorld",
+      "value": "Hello World"
     }
   ]
 }

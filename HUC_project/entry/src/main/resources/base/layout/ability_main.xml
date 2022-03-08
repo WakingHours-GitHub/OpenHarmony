@@ -10,7 +10,7 @@
     >
 
 
-
+<!--图层界面-->
     <DirectionalLayout
         ohos:height="match_parent"
         ohos:width="match_parent"
@@ -39,9 +39,8 @@
 
                 />
             <Image
-                ohos:height="300"
-                ohos:width="300"
-                ohos:right_margin="10"
+                ohos:height="400"
+                ohos:width="1000"
                 ohos:image_src="$media:laoluo"
 
                 />
@@ -55,26 +54,57 @@
             ohos:weight="4"
 
             >
-            <TextField
+            <DirectionalLayout
                 ohos:height="match_content"
-                ohos:width="800"
+                ohos:width="match_content"
+                ohos:orientation="horizontal"
                 ohos:background_element="$graphic:input_textfied"
-                ohos:text_alignment="center"
-                ohos:bottom_margin="15"
-                ohos:text="请输入用户名:"
-                ohos:text_size="100"
-                ohos:text_color="white"
+                ohos:padding="10"
+                >
+                <Image
+                    ohos:height="80"
+                    ohos:width="100"
+                    ohos:scale_mode="inside"
+                    ohos:layout_alignment="center"
+                    ohos:image_src="$media:icon_user"
+                    ohos:right_margin="20"
+                    />
+                <TextField
+                    ohos:height="match_content"
+                    ohos:width="800"
+                    ohos:text_alignment="top"
+                    ohos:text="请输入用户名:"
+                    ohos:text_size="80"
+                    ohos:text_color="white"
 
-                />
-            <TextField
+                    />
+            </DirectionalLayout>
+            <DirectionalLayout
                 ohos:height="match_content"
-                ohos:width="800"
+                ohos:width="match_content"
+                ohos:orientation="horizontal"
                 ohos:background_element="$graphic:input_textfied"
-                ohos:text_alignment="center"
-                ohos:text="请输入密码:"
-                ohos:text_size="100"
-                ohos:text_color="white"
-                />
+                ohos:padding="10"
+                >
+                <Image
+                    ohos:height="80"
+                    ohos:width="100"
+                    ohos:scale_mode="inside"
+                    ohos:layout_alignment="center"
+                    ohos:image_src="$media:icon_hide"
+                    ohos:right_margin="20"
+                    />
+                <TextField
+                    ohos:height="match_content"
+                    ohos:width="800"
+                    ohos:text_alignment="top"
+                    ohos:text="请输入密码:"
+                    ohos:text_size="80"
+                    ohos:text_color="white"
+
+                    />
+            </DirectionalLayout>
+
         </DirectionalLayout>
 
     </DirectionalLayout>
@@ -91,7 +121,7 @@
         <Button
             ohos:id="$+id:but_login"
             ohos:height="match_content"
-            ohos:width="350"
+            ohos:width="380"
             ohos:background_element="$graphic:background_button"
             ohos:weight="1"
             ohos:text="登陆"
@@ -102,7 +132,7 @@
         <Button
             ohos:id="$+id:but_register"
             ohos:height="match_content"
-            ohos:width="350"
+            ohos:width="380"
             ohos:background_element="$graphic:background_button"
             ohos:weight="1"
             ohos:left_margin="15vp"
