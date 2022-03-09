@@ -73,6 +73,7 @@
                     ohos:right_margin="20"
                     />
                 <TextField
+                    ohos:id="$+id:tf_username"
                     ohos:height="match_content"
                     ohos:width="800"
                     ohos:text_alignment="top"
@@ -100,16 +101,30 @@
                     ohos:right_margin="20"
                     />
                 <TextField
+                    ohos:id="$+id:tf_password"
                     ohos:height="match_content"
                     ohos:width="800"
                     ohos:text_alignment="top"
                     ohos:hint="请输入密码:"
+                    ohos:text_input_type="pattern_password"
                     ohos:hint_color="#FFC3C3C3"
                     ohos:text_size="80"
                     ohos:text_color="white"
 
                     />
             </DirectionalLayout>
+            <Button
+                ohos:id="$+id:forget_but"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text="忘记密码?"
+                ohos:text_size="40"
+                ohos:text_color="#FFCFCFCF"
+                ohos:layout_alignment="right"
+                ohos:top_margin="10"
+                ohos:right_margin="50"
+
+                />
 
         </DirectionalLayout>
 

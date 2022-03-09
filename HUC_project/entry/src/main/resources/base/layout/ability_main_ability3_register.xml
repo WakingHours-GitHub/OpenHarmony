@@ -4,16 +4,91 @@
     ohos:height="match_parent"
     ohos:width="match_parent"
     ohos:alignment="center"
-    ohos:orientation="vertical">
+    ohos:orientation="vertical"
+    ohos:background_element="$media:background"
+    ohos:total_weight="12"
+    >
 
-    <Text
-        ohos:id="$+id:text_helloworld"
+<!--    欢迎, 注册界面    -->
+    <DirectionalLayout
         ohos:height="match_content"
         ohos:width="match_content"
-        ohos:background_element="$graphic:background_ability_main_ability3_register"
-        ohos:layout_alignment="horizontal_center"
-        ohos:text="$string:mainability3_register_HelloWorld"
-        ohos:text_size="40vp"
-        />
+        ohos:alignment="horizontal_center"
+        ohos:orientation="vertical"
+        ohos:weight="5"
+        >
+
+        <Text
+            ohos:id="$+id:text_helloworld"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:text="《欢迎来到》"
+
+            ohos:text_color="white"
+            ohos:text_alignment="horizontal_center"
+            ohos:text_size="100"
+            />
+        <Image
+            ohos:height="400"
+            ohos:width="800"
+            ohos:scale_mode="stretch"
+            ohos:top_margin="50"
+
+            ohos:layout_alignment="center"
+            ohos:image_src="$media:smartisan"
+
+            />
+
+        <Text
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:text="开发个锤子有限公司"
+            ohos:text_color="white"
+            ohos:text_alignment="horizontal_center"
+            ohos:text_size="100"
+            />
+
+    </DirectionalLayout>
+
+<!--    页面开发 -->
+    <DirectionalLayout
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:alignment="horizontal_center"
+        ohos:orientation="vertical"
+        ohos:weight="7"
+        >
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:orientation="horizontal"
+            ohos:total_weight="10"
+
+            >
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text="用户名"
+                ohos:text_color="white"
+                ohos:text_size="50"
+                ohos:weight="3"
+                ohos:layout_alignment="left"
+                ohos:right_margin="80"
+                ohos:background_element="black"
+                />
+
+            <TextField
+                ohos:height="match_content"
+                ohos:width="match_content"
+
+                ohos:weight="7"
+
+                ohos:background_element="red"
+            />
+        </DirectionalLayout>
+
+    </DirectionalLayout>
+
 
 </DirectionalLayout>
