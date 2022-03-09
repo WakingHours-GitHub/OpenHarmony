@@ -63,28 +63,31 @@
             ohos:height="match_content"
             ohos:width="match_content"
             ohos:orientation="horizontal"
-            ohos:total_weight="10"
+
 
             >
             <Text
                 ohos:height="match_content"
                 ohos:width="match_content"
-                ohos:text="用户名"
+                ohos:text="用户名:"
                 ohos:text_color="white"
-                ohos:text_size="50"
-                ohos:weight="3"
-                ohos:layout_alignment="left"
-                ohos:right_margin="80"
-                ohos:background_element="black"
+                ohos:text_size="80"
+                ohos:layout_alignment="vertical_center"
+                ohos:text_alignment="vertical_center"
+                ohos:right_margin="20"
                 />
 
             <TextField
-                ohos:height="match_content"
-                ohos:width="match_content"
+                ohos:height="90"
+                ohos:width="600"
+                ohos:layout_alignment="vertical_center"
+                ohos:text_alignment="vertical_center"
+                ohos:background_element="$graphic:radio_button"
+                ohos:hint="测试"
+                ohos:text_size="40"
+                ohos:padding="15"
 
-                ohos:weight="7"
-
-                ohos:background_element="red"
+                ohos:hint_color="#FF818181"
             />
         </DirectionalLayout>
 
