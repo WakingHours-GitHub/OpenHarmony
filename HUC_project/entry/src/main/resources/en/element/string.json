@@ -23,6 +23,18 @@
     {
       "name": "mainability2_login_HelloWorld",
       "value": "Hello World"
+    },
+    {
+      "name": "entry_MainAbility3_register",
+      "value": "entry_MainAbility3_register"
+    },
+    {
+      "name": "mainability3_register_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability3_register_HelloWorld",
+      "value": "Hello World"
     }
   ]
 }

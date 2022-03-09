@@ -23,14 +23,27 @@ public class MainAbilitySlice extends AbilitySlice {
                     @Override
                     public void onClick(Component component) {
                         status.setText("请输入用户名");
+                        // 添加意图
                         Intent intent1 = new Intent(); // 意图对象
+                        // 定义操作
                         Operation op = new Intent.OperationBuilder()
                                 .withDeviceId("")
                                 .withBundleName("com.example.huc_project")
                                 .withAbilityName("com.example.huc_project.MainAbility2_login")
                                 .build(); // 聚合
                         intent1.setOperation(op); // 添加操作
+
                         startAbility(intent1); // 开启意图
+
+                    }
+                }
+        );
+
+        register.setClickedListener( // 登录页面
+                new Component.ClickedListener() {
+                    @Override
+                    public void onClick(Component component) {
+                        Intent intent1 = new Intent();
 
                     }
                 }
@@ -38,12 +51,12 @@ public class MainAbilitySlice extends AbilitySlice {
     }
 
     @Override
-    public void onActive() {
+    public void onActive() { // UI线程, 不断的调用他, 不断的响应, 响应页面操作
         super.onActive();
     }
 
     @Override
-    public void onForeground(Intent intent) {
+    public void onForeground(Intent intent) { // 返回前台. 然后再执行onActive
         super.onForeground(intent);
     }
 }

@@ -10,13 +10,13 @@
     >
 
 
-<!--图层界面-->
+    <!--图层界面-->
     <DirectionalLayout
         ohos:height="match_parent"
         ohos:width="match_parent"
         ohos:orientation="vertical"
         ohos:alignment="center"
-        ohos:weight="6"
+        ohos:weight="8"
         ohos:total_weight="10"
 
         >
@@ -36,6 +36,7 @@
                 ohos:text="交个锤子有限朋友公司"
                 ohos:text_size="100"
                 ohos:text_color="white"
+                ohos:bottom_margin="20"
 
                 />
             <Image
@@ -44,6 +45,7 @@
                 ohos:image_src="$media:laoluo"
 
                 />
+
         </DirectionalLayout>
 
         <DirectionalLayout
@@ -59,7 +61,8 @@
                 ohos:width="match_content"
                 ohos:orientation="horizontal"
                 ohos:background_element="$graphic:input_textfied"
-                ohos:padding="10"
+                ohos:padding="20"
+                ohos:bottom_margin="50"
                 >
                 <Image
                     ohos:height="80"
@@ -73,7 +76,8 @@
                     ohos:height="match_content"
                     ohos:width="800"
                     ohos:text_alignment="top"
-                    ohos:text="请输入用户名:"
+                    ohos:hint="请输入用户名:"
+                    ohos:hint_color="#FFC3C3C3"
                     ohos:text_size="80"
                     ohos:text_color="white"
 
@@ -84,7 +88,8 @@
                 ohos:width="match_content"
                 ohos:orientation="horizontal"
                 ohos:background_element="$graphic:input_textfied"
-                ohos:padding="10"
+                ohos:padding="20"
+
                 >
                 <Image
                     ohos:height="80"
@@ -98,7 +103,8 @@
                     ohos:height="match_content"
                     ohos:width="800"
                     ohos:text_alignment="top"
-                    ohos:text="请输入密码:"
+                    ohos:hint="请输入密码:"
+                    ohos:hint_color="#FFC3C3C3"
                     ohos:text_size="80"
                     ohos:text_color="white"
 
@@ -109,19 +115,20 @@
 
     </DirectionalLayout>
 
-
+    <!--按钮-->
     <DirectionalLayout
         ohos:height="match_parent"
         ohos:width="match_content"
         ohos:orientation="horizontal"
         ohos:total_weight="2"
-        ohos:weight="4"
+        ohos:weight="2"
+        ohos:top_margin="20"
 
         >
         <Button
             ohos:id="$+id:but_login"
             ohos:height="match_content"
-            ohos:width="380"
+            ohos:width="400"
             ohos:background_element="$graphic:background_button"
             ohos:weight="1"
             ohos:text="登陆"
@@ -132,10 +139,10 @@
         <Button
             ohos:id="$+id:but_register"
             ohos:height="match_content"
-            ohos:width="380"
+            ohos:width="400"
             ohos:background_element="$graphic:background_button"
             ohos:weight="1"
-            ohos:left_margin="15vp"
+            ohos:left_margin="60vp"
             ohos:text="注册"
             ohos:text_size="100"
             ohos:text_color="white"
@@ -143,6 +150,8 @@
 
     </DirectionalLayout>
 
+
+<!--    测试TEXT      -->
     <DirectionalLayout
         ohos:height="match_content"
         ohos:width="match_content"

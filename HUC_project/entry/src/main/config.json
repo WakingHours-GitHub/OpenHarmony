@@ -54,6 +54,15 @@
         "label": "$string:entry_MainAbility2_login",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.huc_project.MainAbility3_register",
+        "icon": "$media:icon",
+        "description": "$string:mainability3_register_description",
+        "label": "$string:entry_MainAbility3_register",
+        "type": "page",
+        "launchType": "standard"
       }
     ]
   }
