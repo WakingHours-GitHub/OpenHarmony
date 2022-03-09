@@ -61,6 +61,7 @@ public class MainAbilitySlice extends AbilitySlice {
                 new Component.ClickedListener() {
                     @Override
                     public void onClick(Component component) {
+                        // 跳转到注册页面
                         Intent intent1 = new Intent();
                         Operation op = new Intent.OperationBuilder()
                                 .withDeviceId("").withBundleName("com.example.huc_project")

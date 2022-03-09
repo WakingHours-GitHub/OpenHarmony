@@ -32,7 +32,8 @@
             ohos:height="400"
             ohos:width="800"
             ohos:scale_mode="stretch"
-            ohos:top_margin="50"
+            ohos:top_margin="20"
+            ohos:bottom_margin="20"
 
             ohos:layout_alignment="center"
             ohos:image_src="$media:smartisan"
@@ -56,40 +57,148 @@
         ohos:width="match_parent"
         ohos:alignment="horizontal_center"
         ohos:orientation="vertical"
-        ohos:weight="7"
+        ohos:weight="4"
         >
 
         <DirectionalLayout
             ohos:height="match_content"
             ohos:width="match_content"
+            ohos:alignment="vertical_center"
+            ohos:layout_alignment="center"
             ohos:orientation="horizontal"
-
-
+            ohos:bottom_margin="15"
             >
             <Text
                 ohos:height="match_content"
-                ohos:width="match_content"
-                ohos:text="用户名:"
+                ohos:width="match_parent"
+                ohos:text="   用户名:"
                 ohos:text_color="white"
                 ohos:text_size="80"
-                ohos:layout_alignment="vertical_center"
+                ohos:layout_alignment="left"
                 ohos:text_alignment="vertical_center"
-                ohos:right_margin="20"
+                ohos:right_margin="15"
                 />
 
             <TextField
+                ohos:id="$+id:register_username"
                 ohos:height="90"
                 ohos:width="600"
                 ohos:layout_alignment="vertical_center"
                 ohos:text_alignment="vertical_center"
                 ohos:background_element="$graphic:radio_button"
-                ohos:hint="测试"
+                ohos:hint="由大小写字母, 和数字组成"
                 ohos:text_size="40"
                 ohos:padding="15"
-
-                ohos:hint_color="#FF818181"
+                ohos:hint_color="#FFBCBCBC"
             />
+
         </DirectionalLayout>
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:alignment="vertical_center"
+            ohos:orientation="horizontal"
+            ohos:bottom_margin="15"
+            >
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:text="   密码    :"
+                ohos:text_color="white"
+                ohos:text_size="80"
+                ohos:layout_alignment="left"
+                ohos:text_alignment="vertical_center"
+                ohos:right_margin="16"
+
+                />
+
+            <TextField
+                ohos:id="$+id:register_password"
+                ohos:height="90"
+                ohos:width="600"
+                ohos:layout_alignment="center"
+                ohos:text_alignment="vertical_center"
+                ohos:background_element="$graphic:radio_button"
+                ohos:hint="由大小写字母, 和数字组成"
+                ohos:text_size="40"
+                ohos:padding="15"
+                ohos:hint_color="#FFBCBCBC"
+                ohos:text_input_type="pattern_password"
+                />
+        </DirectionalLayout>
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:alignment="vertical_center"
+            ohos:orientation="horizontal"
+            >
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:text="确认密码:"
+                ohos:text_color="white"
+                ohos:text_size="80"
+                ohos:layout_alignment="center"
+                ohos:text_alignment="left"
+                ohos:right_margin="18"
+                />
+
+            <TextField
+                ohos:id="$+id:register_re_password"
+                ohos:height="90"
+                ohos:width="600"
+                ohos:layout_alignment="center"
+                ohos:text_alignment="vertical_center"
+                ohos:background_element="$graphic:radio_button"
+                ohos:hint="请再次输入密码"
+                ohos:text_size="40"
+                ohos:padding="15"
+                ohos:hint_color="#FFBCBCBC"
+                ohos:text_input_type="pattern_password"
+                />
+        </DirectionalLayout>
+
+        <Text
+            ohos:id="$+id:remind"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:layout_alignment="right"
+            ohos:padding="60"
+            ohos:text_size="50"
+            ohos:text_color="#FFC31D1D"
+            />
+
+
+
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:alignment="horizontal_center"
+        ohos:orientation="vertical"
+        ohos:weight="3"
+        >
+
+        <Text
+            ohos:id="$+id:join_in_text"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:text_size="100"
+            ohos:text_color="white"
+            ohos:bottom_margin="50"
+            />
+        <Button
+            ohos:id="$+id:but_join_in"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:text="JOIN IN !"
+            ohos:text_size="200"
+            ohos:text_color="#FF0B9911"
+            ohos:padding="25"
+            ohos:background_element="$graphic:join_in"
+            />
+
 
     </DirectionalLayout>
 
