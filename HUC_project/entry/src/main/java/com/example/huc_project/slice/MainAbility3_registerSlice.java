@@ -3,10 +3,14 @@ package com.example.huc_project.slice;
 import com.example.huc_project.ResourceTable;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
+import ohos.aafwk.content.Operation;
 import ohos.agp.components.Button;
 import ohos.agp.components.Component;
 import ohos.agp.components.Text;
 import ohos.agp.components.TextField;
+import ohos.agp.render.Region;
+
+import java.util.OptionalInt;
 
 public class MainAbility3_registerSlice extends AbilitySlice {
     @Override
@@ -14,6 +18,7 @@ public class MainAbility3_registerSlice extends AbilitySlice {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_main_ability3_register);
 
+        // 寻找组件:
         Button join_in_but = (Button) findComponentById(ResourceTable.Id_but_join_in);
 
         TextField register_username = (TextField) findComponentById(ResourceTable.Id_register_username);
@@ -44,6 +49,8 @@ public class MainAbility3_registerSlice extends AbilitySlice {
 
                             // 跳转回登录页面
                             // 使用intent
+                            Intent intent1 = new Intent();
+
                         }
 
 

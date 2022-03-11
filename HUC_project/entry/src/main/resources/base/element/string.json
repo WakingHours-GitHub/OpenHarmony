@@ -35,6 +35,10 @@
     {
       "name": "entry_MainAbility3_register",
       "value": "entry_MainAbility3_register"
+    },
+    {
+      "name": "userdataability_description",
+      "value": "hap sample empty provider"
     }
   ]
 }

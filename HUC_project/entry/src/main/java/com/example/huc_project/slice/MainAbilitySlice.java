@@ -11,6 +11,7 @@ import ohos.agp.components.TextField;
 import ohos.org.xml.sax.EntityResolver;
 
 import javax.lang.model.util.ElementScanner6;
+import java.lang.annotation.Target;
 
 public class MainAbilitySlice extends AbilitySlice {
     @Override
@@ -20,11 +21,12 @@ public class MainAbilitySlice extends AbilitySlice {
 
         Button login = (Button) findComponentById(ResourceTable.Id_but_login);
         Button register = (Button) findComponentById(ResourceTable.Id_but_register);
+        Button forget_but = (Button) findComponentById(ResourceTable.Id_forget_but);
         Text status = (Text) findComponentById(ResourceTable.Id_text_status);
         TextField tf_username = (TextField) findComponentById(ResourceTable.Id_tf_username);
         TextField tf_password = (TextField) findComponentById(ResourceTable.Id_tf_password);
 
-
+        // 登录按钮点击
         login.setClickedListener(
                 new Component.ClickedListener() {
                     @Override
@@ -56,7 +58,7 @@ public class MainAbilitySlice extends AbilitySlice {
                     }
                 }
         );
-
+        // 注册按钮点击
         register.setClickedListener( // 登录页面
                 new Component.ClickedListener() {
                     @Override
@@ -69,6 +71,19 @@ public class MainAbilitySlice extends AbilitySlice {
                                 .build();
                         intent1.setOperation(op);
                         startAbility(intent1);
+
+                    }
+                }
+        );
+
+        // 忘记密码
+        // 页面间导航, 到从Slice到Slice
+        forget_but.setClickedListener(
+                new Component.ClickedListener() {
+                    @Override
+                    public void onClick(Component component) {
+                        // 跳转到forget_password_slice页面
+                        present(new forget_password_slice(), new Intent());
 
                     }
                 }

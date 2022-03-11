@@ -197,6 +197,7 @@
             ohos:text_color="#FF0B9911"
             ohos:padding="25"
             ohos:background_element="$graphic:join_in"
+            ohos:bottom_margin="30"
             />
 
 

@@ -63,6 +63,18 @@
         "label": "$string:entry_MainAbility3_register",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "name": "com.example.huc_project.UserDataAbility",
+        "icon": "$media:icon",
+        "description": "$string:userdataability_description",
+        "type": "data",
+        "uri": "dataability://com.example.huc_project.UserDataAbility"
+      }
+    ],
+    "defPermissions": [
+      {
+        "name": "com.example.huc_project.DataAbilityShellProvider.PROVIDER"
       }
     ]
   }
