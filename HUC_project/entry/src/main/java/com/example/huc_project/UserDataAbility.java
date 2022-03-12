@@ -2,12 +2,11 @@ package com.example.huc_project;
 
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
+import ohos.app.Context;
 import ohos.data.DatabaseHelper;
-import ohos.data.rdb.RdbOpenCallback;
-import ohos.data.rdb.RdbStore;
-import ohos.data.rdb.StoreConfig;
+import ohos.data.dataability.DataAbilityUtils;
+import ohos.data.rdb.*;
 import ohos.data.resultset.ResultSet;
-import ohos.data.rdb.ValuesBucket;
 import ohos.data.dataability.DataAbilityPredicates;
 import ohos.hiviewdfx.HiLog;
 import ohos.hiviewdfx.HiLogLabel;
@@ -28,6 +27,8 @@ import java.io.FileDescriptor;
     2. 创建关系型数据 -> user表
     3. 重写数据库的操作方法. -> CRUD
 
+那么如何访问这个DataAbility:
+    在MianAbility中通过DataAbilityHelper来访问userDataAbility
 
 
  */
@@ -78,7 +79,7 @@ public class UserDataAbility extends Ability {
     // 在下面的操作中, 我们可以直接使用rdbStore进行数据库操作.
 
     /**
-     *
+     * 重写query方法.
      * @param uri
      * @param columns 查询操作需要返回的字段, ["userName", "userPwd"]
      * @param predicates 封装查询条, 相当于ktMapper中, example对象
@@ -86,8 +87,15 @@ public class UserDataAbility extends Ability {
      */
     @Override
     public ResultSet query(Uri uri, String[] columns, DataAbilityPredicates predicates) {
+        // predicates我们还需要对数据进行一个转换.
+        // 我们将传递过来的查询条件, 与我们的users表进行封装, 返回 rdbPredicates
+        // 然后来查询, 得到resultSet
+        String path = uri.getLastPath();
+        ResultSet resultSet = null;
+        RdbPredicates rdbPredicates = DataAbilityUtils.createRdbPredicates(predicates, "users"); // 这就包含了数据表的信息
+        resultSet = rdbStore.query(rdbPredicates, columns);
 
-        return null;
+        return resultSet;
     }
 
     /**
@@ -120,15 +128,31 @@ public class UserDataAbility extends Ability {
 
     @Override
     public int delete(Uri uri, DataAbilityPredicates predicates) {
-        return 0;
+        // 封装条件:
+        int i = 0;
+        String path = uri.getLastPath();
+
+        if ("users".equalsIgnoreCase(path)) { // users表
+            RdbPredicates rdbPredicates = DataAbilityUtils.createRdbPredicates(predicates, "user"); // 这就包含了数据表的信息
+            i = rdbStore.delete(rdbPredicates);
+        }
+        return i;
     }
 
     @Override
     public int update(Uri uri, ValuesBucket value, DataAbilityPredicates predicates) {
-        return 0;
+        int i = 0;
+        String path = uri.getLastPath();
+
+        if ("users".equalsIgnoreCase(path)) { // users表
+            RdbPredicates rdbPredicates = DataAbilityUtils.createRdbPredicates(predicates, "user"); // 这就包含了数据表的信息
+            i = rdbStore.update(value, rdbPredicates);
+        }
+        return i;
     }
 
     // 下面的函数都没什么用处, 只针对fileDataAbility, 只是针对文件操作的方法
+    // 可以删除
     @Override
     public FileDescriptor openFile(Uri uri, String mode) {
         return null;

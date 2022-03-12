@@ -1,23 +1,36 @@
 package com.example.huc_project.slice;
 
 import com.example.huc_project.ResourceTable;
+import com.example.huc_project.UserDataAbility;
 import ohos.aafwk.ability.AbilitySlice;
+import ohos.aafwk.ability.DataAbilityHelper;
+import ohos.aafwk.ability.DataAbilityRemoteException;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.agp.components.Button;
 import ohos.agp.components.Component;
 import ohos.agp.components.Text;
 import ohos.agp.components.TextField;
+import ohos.data.dataability.DataAbilityPredicates;
+import ohos.data.rdb.RdbPredicates;
+import ohos.data.resultset.ResultSet;
 import ohos.org.xml.sax.EntityResolver;
+import ohos.utils.net.Uri;
 
 import javax.lang.model.util.ElementScanner6;
 import java.lang.annotation.Target;
 
 public class MainAbilitySlice extends AbilitySlice {
+    private DataAbilityHelper dataAbilityHelper;
+
+
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_main);
+        // 初始化DataAbility
+        dataAbilityHelper = DataAbilityHelper.creator(this);
+
 
         Button login = (Button) findComponentById(ResourceTable.Id_but_login);
         Button register = (Button) findComponentById(ResourceTable.Id_but_register);
@@ -32,6 +45,21 @@ public class MainAbilitySlice extends AbilitySlice {
                     @Override
                     public void onClick(Component component) {
 //                        status.setText("请输入用户名");
+                        // 执行查询操作：
+                        Uri uri = Uri.parse("dataability:///com.example.huc_project.UserDataAbility/users");
+                        String[] columns = new String[]{"userName","userPwd"};
+                        DataAbilityPredicates dataAbilityPredicates = new DataAbilityPredicates();
+                        try{
+                            ResultSet rs = dataAbilityHelper.query(uri, columns, dataAbilityPredicates);
+                            do {
+                                String userName = rs.getString(rs.getColumnIndexForName("userName"));
+                                String userPwd = rs.getString(rs.getColumnIndexForName("userPwd"));
+                                System.out.println(userName+userPwd);
+                            }while(rs.goToNextRow());
+                        } catch (DataAbilityRemoteException e) {
+                            e.printStackTrace();
+                        }
+
 
                         if (tf_username.getText().equals("") || tf_password.getText().equals(""))
                             status.setText("请输入用户名或密码");
