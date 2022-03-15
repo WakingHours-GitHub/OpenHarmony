@@ -47,11 +47,13 @@ public class MainAbility3_registerSlice extends AbilitySlice {
                     @Override
                     public void onClick(Component component) {
                         remind.setText("");
+
                         if (register_username.getText().equals("") || register_password.getText().equals("") || register_re_password.getText().equals("") ) {
                             remind.setText("用户名或密码不能为空!!!");
                         }else if (!register_password.getText().equals(register_re_password.getText())) {
                             remind.setText("两次密码不一致");
-                        } /*else if () // 判断用户名是否在数据库中*/
+                        }
+                        /*else if () // 判断用户名是否在数据库中*/
                         else{ // 最后才是登录成功
 
                             // 将数据添加进数据库中
@@ -71,7 +73,7 @@ public class MainAbility3_registerSlice extends AbilitySlice {
                             try {
                                 // 因为这个操作本身是抛出异常的, 所以我们需要try catch来环绕
                                 int i = dataAbilityHelper.insert(uri, valuesBucket); // 这里是通过uri调用的, 而不是通过方法.
-                                System.out.println("-->>>"+i); // 打印i, 即是否添加成功
+//                                System.out.println("-->>>"+i); // 打印i, 即是否添加成功
                                 if (i == 1){
                                     join_in_text.setText("成功加入锤子科技!!!");
                                 }else{

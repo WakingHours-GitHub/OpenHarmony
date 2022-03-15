@@ -88,7 +88,7 @@ public class MainAbilitySlice extends AbilitySlice {
                             intent1.setOperation(op); // 添加操作
 
                             startAbility(intent1); // 开启意图
-                        }else{
+                        }else{ // 如果, 无用户, 则需要注册
                             status.setText("无该用户, 请注册");
                         }
 
@@ -99,7 +99,7 @@ public class MainAbilitySlice extends AbilitySlice {
                 }
         );
         // 注册按钮点击
-        register.setClickedListener( // 登录页面
+        register.setClickedListener( // 注册页面
                 new Component.ClickedListener() {
                     @Override
                     public void onClick(Component component) {
