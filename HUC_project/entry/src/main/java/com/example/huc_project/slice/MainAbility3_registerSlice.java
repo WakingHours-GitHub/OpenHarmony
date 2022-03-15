@@ -25,7 +25,7 @@ public class MainAbility3_registerSlice extends AbilitySlice {
         super.setUIContent(ResourceTable.Layout_ability_main_ability3_register);
 
         // 初始化:
-//        dataAbilityHelper = DataAbilityHelper.create(this,uri);
+        dataAbilityHelper = DataAbilityHelper.creator(this);
 
         // 寻找组件:
         Button join_in_but = (Button) findComponentById(ResourceTable.Id_but_join_in);
@@ -53,7 +53,7 @@ public class MainAbility3_registerSlice extends AbilitySlice {
                             remind.setText("两次密码不一致");
                         } /*else if () // 判断用户名是否在数据库中*/
                         else{ // 最后才是登录成功
-                            join_in_text.setText("成功加入锤子科技!!!");
+
                             // 将数据添加进数据库中
                             // 访问DataAbility完成数据的添加.
                             // 要通过DataAbilityHelper来访问
@@ -68,17 +68,22 @@ public class MainAbility3_registerSlice extends AbilitySlice {
                             valuesBucket.putString("userName",register_username.getText());
                             valuesBucket.putString("userPwd",register_password.getText());
 
-//                            try {
-//                                // 因为这个操作本身是抛出异常的, 所以我们需要try catch来环绕
-//                                int i = dataAbilityHelper.insert(uri, valuesBucket); // 这里是通过uri调用的, 而不是通过方法.
-//                                System.out.println("-->>>"+i); // 打印i, 即是否添加成功
-//                            } catch (DataAbilityRemoteException e) {
-//                                e.printStackTrace();
-//                            }
-//
-//
-//                            // 返回登录页面
-//                            // 使用intent(页间跳转)
+                            try {
+                                // 因为这个操作本身是抛出异常的, 所以我们需要try catch来环绕
+                                int i = dataAbilityHelper.insert(uri, valuesBucket); // 这里是通过uri调用的, 而不是通过方法.
+                                System.out.println("-->>>"+i); // 打印i, 即是否添加成功
+                                if (i == 1){
+                                    join_in_text.setText("成功加入锤子科技!!!");
+                                }else{
+                                    join_in_text.setText("添加失败");
+                                }
+                            } catch (DataAbilityRemoteException e) {
+                                e.printStackTrace();
+                            }
+
+
+                            // 返回登录页面
+                            // 使用intent(页间跳转)
 //                            Intent intent1 = new Intent();
 
                         }

@@ -40,7 +40,7 @@ public class UserDataAbility extends Ability {
     private RdbStore rdbStore;
 
     // StoreConfig对象,就是关联数据库文件配置
-    private StoreConfig config = StoreConfig.newDefaultConfig("userStore"); // 传入一个数据库名称
+    private StoreConfig config = StoreConfig.newDefaultConfig("UserStore.db"); // 传入一个数据库名称
     // RdbOpenCallback 使用rdbStore对象回调此RdbOpenCallback对象的onCreate()创建数据表.
     private RdbOpenCallback callback = new RdbOpenCallback() {
         // 回调函数
@@ -48,10 +48,12 @@ public class UserDataAbility extends Ability {
         public void onCreate(RdbStore rdbStore) { // 创建数据表
 
             // 使用rdbStore对象执行SQL创建数据表
-            rdbStore.executeSql("CREATE TABLE IF NOT EXISTS users" +
-                    "(userId integer primary key autoincrement," + // id是主键.
-                    "userName text not null unique," + // 用户名必须是唯一并且非空的
-                    "userPwd text not null)"); // 密码是非空的
+            rdbStore.executeSql(
+                    "CREATE TABLE IF NOT EXISTS users (" +
+                            "userId integer primary key autoincrement," + // id是主键.
+                            "userName text not null unique," + // 用户名必须是唯一并且非空的
+                            "userPwd text not null" +
+                            ")"); // 密码是非空的
         }
 
         @Override
@@ -61,11 +63,12 @@ public class UserDataAbility extends Ability {
     };
 
 
+
+
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
         HiLog.info(LABEL_LOG, "UserDataAbility onStart");
-
 
         // 初始化与数据库的连接
         DatabaseHelper helper = new DatabaseHelper(this);
@@ -91,9 +94,8 @@ public class UserDataAbility extends Ability {
         // 我们将传递过来的查询条件, 与我们的users表进行封装, 返回 rdbPredicates
         // 然后来查询, 得到resultSet
         String path = uri.getLastPath();
-        ResultSet resultSet = null;
         RdbPredicates rdbPredicates = DataAbilityUtils.createRdbPredicates(predicates, "users"); // 这就包含了数据表的信息
-        resultSet = rdbStore.query(rdbPredicates, columns);
+        ResultSet resultSet = rdbStore.query(rdbPredicates, columns);
 
         return resultSet;
     }

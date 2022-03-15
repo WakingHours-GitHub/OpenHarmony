@@ -19,6 +19,7 @@ import ohos.utils.net.Uri;
 
 import javax.lang.model.util.ElementScanner6;
 import java.lang.annotation.Target;
+import java.nio.file.FileAlreadyExistsException;
 
 public class MainAbilitySlice extends AbilitySlice {
     private DataAbilityHelper dataAbilityHelper;
@@ -44,18 +45,29 @@ public class MainAbilitySlice extends AbilitySlice {
                 new Component.ClickedListener() {
                     @Override
                     public void onClick(Component component) {
+                        boolean is_user =false;
 //                        status.setText("请输入用户名");
                         // 执行查询操作：
-                        Uri uri = Uri.parse("dataability:///com.example.huc_project.UserDataAbility/users");
-                        String[] columns = new String[]{"userName","userPwd"};
+                        Uri uri = Uri.parse("dataability:///com.example.huc_project.UserDataAbility/users"); // 从字符串转换到URI object
+                        String[] columns = new String[]{"userName","userPwd"}; // 查询列表
                         DataAbilityPredicates dataAbilityPredicates = new DataAbilityPredicates();
+
                         try{
                             ResultSet rs = dataAbilityHelper.query(uri, columns, dataAbilityPredicates);
-                            do {
-                                String userName = rs.getString(rs.getColumnIndexForName("userName"));
-                                String userPwd = rs.getString(rs.getColumnIndexForName("userPwd"));
-                                System.out.println(userName+userPwd);
-                            }while(rs.goToNextRow());
+                            int user_count = rs.getRowCount();
+
+                            if (user_count > 0) { // 只有
+                                rs.goToFirstRow();
+                                do {
+                                    String userName = rs.getString(rs.getColumnIndexForName("userName"));
+                                    String userPwd = rs.getString(rs.getColumnIndexForName("userPwd"));
+                                    if (userName.equals(tf_username.getText()) && userPwd.equals(tf_password.getText())){
+                                        is_user = true;
+                                    }
+//                                    System.out.println(userName + userPwd);
+                                } while (rs.goToNextRow());
+                            }
+
                         } catch (DataAbilityRemoteException e) {
                             e.printStackTrace();
                         }
@@ -63,7 +75,7 @@ public class MainAbilitySlice extends AbilitySlice {
 
                         if (tf_username.getText().equals("") || tf_password.getText().equals(""))
                             status.setText("请输入用户名或密码");
-                        else if(false){ // 判断是否在数据库中
+                        else if(is_user){ // 判断是否在数据库中
                             // 页面导航, 可以实现不同设备间的页面的一个切换
                             // 添加意图
                             Intent intent1 = new Intent(); // 意图对象
