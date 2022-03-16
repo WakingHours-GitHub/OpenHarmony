@@ -25,14 +25,14 @@ public class MainAbilitySlice extends AbilitySlice {
     private DataAbilityHelper dataAbilityHelper;
 
 
-    @Override
+    @Override // 初始化页面
     public void onStart(Intent intent) { // intent用于信息传递.
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_main);
         // 初始化DataAbility
         dataAbilityHelper = DataAbilityHelper.creator(this);
 
-
+        // 寻找组件
         Button login = (Button) findComponentById(ResourceTable.Id_but_login);
         Button register = (Button) findComponentById(ResourceTable.Id_but_register);
         Button forget_but = (Button) findComponentById(ResourceTable.Id_forget_but);
@@ -48,7 +48,7 @@ public class MainAbilitySlice extends AbilitySlice {
                         if (tf_username.getText().equals("") || tf_password.getText().equals("")) {
                             status.setText("请输入用户名或密码");
                             // 返回
-                        } else {
+                        } else { // 不为空的情况
 
                             boolean is_user = false;
 //                        status.setText("请输入用户名");
@@ -66,7 +66,7 @@ public class MainAbilitySlice extends AbilitySlice {
                                     do {
                                         String userName = rs.getString(rs.getColumnIndexForName("userName"));
                                         String userPwd = rs.getString(rs.getColumnIndexForName("userPwd"));
-                                        if (userName.equals(tf_username.getText()) && userPwd.equals(tf_password.getText())) {
+                                        if (userName.equals(tf_username.getText()) && userPwd.equals(tf_password.getText())) { // 如果均正确
                                             is_user = true;
                                         }
 //                                    System.out.println(userName + userPwd);
@@ -100,6 +100,7 @@ public class MainAbilitySlice extends AbilitySlice {
                     }
                 }
         );
+
         // 注册按钮点击
         register.setClickedListener( // 注册页面
                 new Component.ClickedListener() {
@@ -142,5 +143,5 @@ public class MainAbilitySlice extends AbilitySlice {
         super.onForeground(intent);
     }
 
-    // 如果需要获取消息, 就需要重写onAbilityResult():
+    // 如果需要获取消息, 就需要重写onAbilityResult()方法
 }
