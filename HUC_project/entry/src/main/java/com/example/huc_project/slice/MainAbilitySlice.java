@@ -26,7 +26,7 @@ public class MainAbilitySlice extends AbilitySlice {
 
 
     @Override
-    public void onStart(Intent intent) {
+    public void onStart(Intent intent) { // intent用于信息传递.
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_main);
         // 初始化DataAbility
@@ -45,56 +45,58 @@ public class MainAbilitySlice extends AbilitySlice {
                 new Component.ClickedListener() {
                     @Override
                     public void onClick(Component component) {
-                        boolean is_user =false;
+                        if (tf_username.getText().equals("") || tf_password.getText().equals("")) {
+                            status.setText("请输入用户名或密码");
+                            // 返回
+                        } else {
+
+                            boolean is_user = false;
 //                        status.setText("请输入用户名");
-                        // 执行查询操作：
-                        Uri uri = Uri.parse("dataability:///com.example.huc_project.UserDataAbility/users"); // 从字符串转换到URI object
-                        String[] columns = new String[]{"userName","userPwd"}; // 查询列表
-                        DataAbilityPredicates dataAbilityPredicates = new DataAbilityPredicates();
+                            // 执行查询操作：
+                            Uri uri = Uri.parse("dataability:///com.example.huc_project.UserDataAbility/users"); // 从字符串转换到URI object
+                            String[] columns = new String[]{"userName", "userPwd"}; // 查询列表
+                            DataAbilityPredicates dataAbilityPredicates = new DataAbilityPredicates();
 
-                        try{
-                            ResultSet rs = dataAbilityHelper.query(uri, columns, dataAbilityPredicates);
-                            int user_count = rs.getRowCount();
+                            try {
+                                ResultSet rs = dataAbilityHelper.query(uri, columns, dataAbilityPredicates);
+                                int user_count = rs.getRowCount();
 
-                            if (user_count > 0) { // 只有
-                                rs.goToFirstRow();
-                                do {
-                                    String userName = rs.getString(rs.getColumnIndexForName("userName"));
-                                    String userPwd = rs.getString(rs.getColumnIndexForName("userPwd"));
-                                    if (userName.equals(tf_username.getText()) && userPwd.equals(tf_password.getText())){
-                                        is_user = true;
-                                    }
+                                if (user_count > 0) { // 只有
+                                    rs.goToFirstRow();
+                                    do {
+                                        String userName = rs.getString(rs.getColumnIndexForName("userName"));
+                                        String userPwd = rs.getString(rs.getColumnIndexForName("userPwd"));
+                                        if (userName.equals(tf_username.getText()) && userPwd.equals(tf_password.getText())) {
+                                            is_user = true;
+                                        }
 //                                    System.out.println(userName + userPwd);
-                                } while (rs.goToNextRow());
+                                    } while (rs.goToNextRow()); // 循环, 查找
+                                }
+
+                            } catch (DataAbilityRemoteException e) {
+                                e.printStackTrace();
                             }
 
-                        } catch (DataAbilityRemoteException e) {
-                            e.printStackTrace();
+
+                            if (is_user) { // 判断是否在数据库中
+                                // 页面导航, 可以实现不同设备间的页面的一个切换
+                                // 添加意图
+                                Intent intent1 = new Intent(); // 意图对象
+                                // 定义操作, 与操作系统操作的接口
+                                Operation op = new Intent.OperationBuilder()
+                                        .withDeviceId("") // 设置设备信息.
+                                        .withBundleName("com.example.huc_project")
+                                        .withAbilityName("com.example.huc_project.MainAbility2_login")
+                                        .build(); // 聚合
+                                intent1.setOperation(op); // 添加操作
+
+                                startAbility(intent1); // 开启意图
+                            } else { // 如果, 无用户, 则需要注册
+                                status.setText("无该用户, 请注册");
+                            }
+
+
                         }
-
-
-                        if (tf_username.getText().equals("") || tf_password.getText().equals(""))
-                            status.setText("请输入用户名或密码");
-                        else if(is_user){ // 判断是否在数据库中
-                            // 页面导航, 可以实现不同设备间的页面的一个切换
-                            // 添加意图
-                            Intent intent1 = new Intent(); // 意图对象
-                            // 定义操作, 与操作系统操作的接口
-                            Operation op = new Intent.OperationBuilder()
-                                    .withDeviceId("")
-                                    .withBundleName("com.example.huc_project")
-                                    .withAbilityName("com.example.huc_project.MainAbility2_login")
-                                    .build(); // 聚合
-                            intent1.setOperation(op); // 添加操作
-
-                            startAbility(intent1); // 开启意图
-                        }else{ // 如果, 无用户, 则需要注册
-                            status.setText("无该用户, 请注册");
-                        }
-
-
-
-
                     }
                 }
         );
@@ -136,7 +138,9 @@ public class MainAbilitySlice extends AbilitySlice {
     }
 
     @Override
-    public void onForeground(Intent intent) { // 返回前台. 然后再执行onActive
+    public void onForeground(Intent intent) { // 返回前台. 然后再执行onActive, 处于激活状态
         super.onForeground(intent);
     }
+
+    // 如果需要获取消息, 就需要重写onAbilityResult():
 }
