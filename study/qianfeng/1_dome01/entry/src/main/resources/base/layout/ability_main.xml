@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--根标签-->
 <DirectionalLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:height="match_parent"

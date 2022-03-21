@@ -8,8 +8,11 @@ import ohos.app.dispatcher.TaskDispatcher;
 import ohos.app.dispatcher.task.TaskPriority;
 
 /*
-启动流程
+MainAbility只是一个页面的容器
+里面放的是我们通过前端语言所呈现的内容.
+
  */
+
 
 public class MainAbility extends Ability {
     @Override
