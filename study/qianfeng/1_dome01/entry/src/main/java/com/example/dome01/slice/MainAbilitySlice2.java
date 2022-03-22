@@ -3,6 +3,8 @@ package com.example.dome01.slice;
 import ohos.aafwk.content.Intent;
 
 public class MainAbilitySlice2 extends MainAbilitySlice{
+
+
     @Override // 重载我们的onStart方法
     public void onStart(Intent intent) {
         super.onStart(intent);
@@ -10,4 +12,8 @@ public class MainAbilitySlice2 extends MainAbilitySlice{
         // setUIContent(int) -> 加载应用的布局文件(xml) 来作为当前slice的视图.
 
     }
+
+
+
+
 }
