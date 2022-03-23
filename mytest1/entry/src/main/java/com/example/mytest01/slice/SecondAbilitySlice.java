@@ -37,6 +37,9 @@ public class SecondAbilitySlice extends AbilitySlice {
         dl.setAlignment(TableLayout.Alignment.ALIGNMENT_START);
         // 4. 把布局添加到子界面当中
         super.setUIContent(dl);
+
+
+
     }
 
     @Override

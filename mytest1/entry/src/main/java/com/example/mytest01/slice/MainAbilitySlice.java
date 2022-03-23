@@ -1,14 +1,19 @@
 package com.example.mytest01.slice;
 
+import com.example.mytest01.MyTask;
 import com.example.mytest01.ResourceTable;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.agp.components.Button;
 import ohos.agp.components.Component;
+import ohos.app.dispatcher.TaskDispatcher;
+import ohos.app.dispatcher.task.Revocable;
+import ohos.app.dispatcher.task.TaskPriority;
 
 public class MainAbilitySlice extends AbilitySlice implements Component.ClickedListener {
     Button but; // 设置为类的成员, 方便后面事件的使用
+    Revocable job_1;
 
     @Override
     public void onStart(Intent intent) {
@@ -46,6 +51,17 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
                 }
         );
         but.setClickedListener(this);
+
+        // 开启我们的线程协调员
+        TaskDispatcher globalTaskDispatcher = getGlobalTaskDispatcher(TaskPriority.DEFAULT); // 返回全局县城协调器
+        // 异步派发到别的线程上了.
+         // 返回的是一个状态?
+        job_1 = globalTaskDispatcher.asyncDispatch(new MyTask("任务1"));
+        // Revocable是线程管理的,
+
+        // 同步派发, 指的是主线程分配了一个协调员去执行这个任务, 并不是在主线程中执行
+        // 但是主线程需要等待该线程执行完, 再继续执行.
+        globalTaskDispatcher.syncDispatch(new MyTask("任务_2")); // 但是没有返回值
     }
 
     @Override
@@ -57,6 +73,19 @@ public class MainAbilitySlice extends AbilitySlice implements Component.ClickedL
     public void onForeground(Intent intent) {
         super.onForeground(intent);
     }
+
+
+    // 我们需要当执行
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // 如果任务已经执行, 那么revoke就失效了
+        // 如果任务已经在执行中或执行完成，则会返回取消失败。
+        job_1.revoke(); //
+
+
+    }
+
     // 实现这个方法
     @Override
     public void onClick(Component component) {
