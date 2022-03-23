@@ -16,5 +16,21 @@
         ohos:text="$string:mainability_HelloWorld"
         ohos:text_size="40vp"
         />
+<!--
+        match_content是根据组件内容来设置长度
+        match_parent是根据父组件大小设置长度
+        margin是指从自身边框到另一个容器边框之间的距离，就是容器外距离。（外边距）
+        padding是指自身边框到自身内部另一个容器边框之间的距离，就是容器内距离。（内边距）
+-->
+    <Button
+        ohos:id="$+id:btn1"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:padding="5"
+        ohos:text="按钮"
+        ohos:text_size="40vp"
+        ohos:background_element="#00FFFF"
+        />
+
 
 </DirectionalLayout>

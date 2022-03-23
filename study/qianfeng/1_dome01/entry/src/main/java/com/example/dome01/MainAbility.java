@@ -28,8 +28,9 @@ public class MainAbility extends Ability {
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setMainRoute(MainAbilitySlice.class.getName());
-        System.out.println("-------->>>>onStart");
-
+//        System.out.println("-------->>>>onStart");
+//        Log.info("onStart");
+        Log.debug("onStart");
 
     }
 
@@ -43,6 +44,8 @@ public class MainAbility extends Ability {
     protected void onActive() {
         super.onActive();
         System.out.println("-------->>>>onActive");
+        Log.debug("onActive");
+
 
     }
 
@@ -54,6 +57,8 @@ public class MainAbility extends Ability {
     protected void onInactive() {
         super.onInactive();
         System.out.println("-------->>>>onInactive");
+        Log.debug("onInactive");
+
 
 
     }
@@ -66,6 +71,7 @@ public class MainAbility extends Ability {
     protected void onBackground() {
         super.onBackground();
         System.out.println("-------->>>>onBackground");
+        Log.debug("onBackground");
 
     }
 
@@ -76,6 +82,7 @@ public class MainAbility extends Ability {
     protected void onForeground(Intent intent) {
         super.onForeground(intent);
         System.out.println("-------->>>>onForeground");
+        Log.debug("onForeground");
 
     }
     /*
@@ -86,6 +93,7 @@ public class MainAbility extends Ability {
     protected void onStop() {
         super.onStop();
         System.out.println("-------->>>>onStop");
+        Log.debug("onStop");
 
     }
 }
