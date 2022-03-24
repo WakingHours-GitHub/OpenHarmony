@@ -5,4 +5,22 @@
     ohos:width="match_parent"
     ohos:orientation="vertical">
 
+    <!-- 图片, 视频, 这种资源都存放在resources/base/media目录
+        注意, 文件的命名规则与变量名命名规则相同, 以为这个文件名会作为一个变量引用到我们的xml文件中
+     -->
+    <Image
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:image_src="$media:icon"
+        />
+
+    <Text
+        ohos:id="$+id:text1"
+        ohos:height="match_parent"
+        ohos:width="match_content"
+        ohos:text_size="100"
+        ohos:text=""
+        ohos:text_alignment="horizontal_center"
+        />
+
 </DirectionalLayout>

@@ -27,10 +27,9 @@ public class MainAbility extends Ability {
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
-        super.setMainRoute(MainAbilitySlice.class.getName());
+        super.setMainRoute(MainAbilitySlice.class.getName()); // 默认进入的slice
 //        System.out.println("-------->>>>onStart");
-//        Log.info("onStart");
-        Log.debug("onStart");
+        Log.debug(MainAbilitySlice.class.getName()+"onStart");
 
     }
 
@@ -44,7 +43,7 @@ public class MainAbility extends Ability {
     protected void onActive() {
         super.onActive();
         System.out.println("-------->>>>onActive");
-        Log.debug("onActive");
+        Log.debug(MainAbilitySlice.class.getName()+"onActive");
 
 
     }
@@ -56,8 +55,8 @@ public class MainAbility extends Ability {
     @Override
     protected void onInactive() {
         super.onInactive();
-        System.out.println("-------->>>>onInactive");
-        Log.debug("onInactive");
+//        System.out.println("-------->>>>onInactive");
+        Log.debug(MainAbilitySlice.class.getName()+"onInactive");
 
 
 
@@ -70,8 +69,8 @@ public class MainAbility extends Ability {
     @Override
     protected void onBackground() {
         super.onBackground();
-        System.out.println("-------->>>>onBackground");
-        Log.debug("onBackground");
+//        System.out.println("-------->>>>onBackground");
+        Log.debug(MainAbilitySlice.class.getName()+"onBackground");
 
     }
 
@@ -81,8 +80,8 @@ public class MainAbility extends Ability {
     @Override
     protected void onForeground(Intent intent) {
         super.onForeground(intent);
-        System.out.println("-------->>>>onForeground");
-        Log.debug("onForeground");
+//        System.out.println("-------->>>>onForeground");
+        Log.debug(MainAbilitySlice.class.getName()+"onForeground");
 
     }
     /*
@@ -92,8 +91,8 @@ public class MainAbility extends Ability {
     @Override
     protected void onStop() {
         super.onStop();
-        System.out.println("-------->>>>onStop");
-        Log.debug("onStop");
+//        System.out.println("-------->>>>onStop");
+        Log.debug(MainAbilitySlice.class.getName()+"onStop");
 
     }
 }
