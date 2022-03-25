@@ -45,6 +45,17 @@
         "label": "$string:entry_MainAbility",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "backgroundModes": [
+          "dataTransfer",
+          "audioPlayback",
+          "location"
+        ],
+        "name": "com.example.demo03_serviceability.MusicServiceAbility",
+        "icon": "$media:icon",
+        "description": "$string:musicserviceability_description",
+        "type": "service"
       }
     ]
   }
