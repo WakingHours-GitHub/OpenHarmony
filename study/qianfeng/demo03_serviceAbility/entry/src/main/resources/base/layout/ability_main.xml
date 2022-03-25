@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:id="$+id:text_helloworld"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:background_element="$graphic:background_ability_main"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="音乐列表页面"
+        ohos:text_size="20vp"
+        />
+
+    <Text
+        ohos:id="$+id:musicText1"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:background_element="$graphic:background_ability_main"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="第一首音乐"
+        ohos:text_size="15vp"
+        ohos:top_margin="15"
+
+        />
+
+    <Text
+        ohos:id="$+id:musicText2"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:background_element="$graphic:background_ability_main"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="离离原上普"
+        ohos:text_size="15vp"
+        ohos:top_margin="15"
+        />
+
+    <Text
+        ohos:id="$+id:musicText3"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:background_element="$graphic:background_ability_main"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="第三首音乐"
+        ohos:text_size="15vp"
+        ohos:top_margin="15"
+
+        />
+
+
+
+</DirectionalLayout>
