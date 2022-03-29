@@ -1,4 +1,4 @@
-package com.example.demo01_taskdispatcher;
+ package com.example.demo01_taskdispatcher;
 
 import com.example.demo01_taskdispatcher.slice.MainAbilitySlice;
 import ohos.aafwk.ability.Ability;
@@ -7,13 +7,44 @@ import ohos.app.dispatcher.Group;
 import ohos.app.dispatcher.TaskDispatcher;
 import ohos.app.dispatcher.task.Revocable;
 import ohos.app.dispatcher.task.TaskPriority;
+import ohos.eventhandler.EventHandler;
+import ohos.eventhandler.EventRunner;
+import ohos.eventhandler.InnerEvent;
 
 public class MainAbility extends Ability {
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setMainRoute(MainAbilitySlice.class.getName());
-        Log.info(this.getClass()+"::onStart");
+
+
+
+    }
+    public void eventHandletext02(){
+        EventRunner eventRunner = EventRunner.create(true);
+        MyEventHandler myEventHandle = new MyEventHandler(eventRunner);
+        int eventId = 1; // 设置参数
+        Object eventObject = null;
+        long  param = 0L;
+        // 进程之间的消息体
+        InnerEvent event = InnerEvent.get(eventId, eventObject);
+
+        // 发送: 将消息发送出去
+        myEventHandle.sendEvent(event);
+
+        /*
+        那么如何从子线程中接受消息呢?
+         */
+        //  接受来自子线程的消息
+        EventRunner mainEventRunner1 = EventRunner.getMainEventRunner(); // 得到主线程的
+        EventHandler mainEventHandler = new EventHandler(mainEventRunner1);
+
+
+
+    }
+
+    public void taskTest01(){
+        Log.info(this.getClass()+"::onStart");  // 方法引用, 就是lambda的另一种形式
 
         // 获取全局并发任务分发器
 //        TaskDispatcher globalTaskDispatcher = this.getGlobalTaskDispatcher(TaskPriority.DEFAULT);
@@ -51,4 +82,5 @@ public class MainAbility extends Ability {
 
 
     }
+
 }
