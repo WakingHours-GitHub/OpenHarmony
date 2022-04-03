@@ -11,18 +11,23 @@ import ohos.eventhandler.EventHandler;
 import ohos.eventhandler.EventRunner;
 import ohos.eventhandler.InnerEvent;
 
-public class MainAbility extends Ability {
+import java.security.Policy;
+
+ public class MainAbility extends Ability {
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setMainRoute(MainAbilitySlice.class.getName());
 
+        eventHandletext02();
+
 
 
     }
     public void eventHandletext02(){
-        EventRunner eventRunner = EventRunner.create(true);
+        EventRunner eventRunner = EventRunner.create(true); // 新建立的子线程的runner
         MyEventHandler myEventHandle = new MyEventHandler(eventRunner);
+
         int eventId = 1; // 设置参数
         Object eventObject = null;
         long  param = 0L;
@@ -36,11 +41,27 @@ public class MainAbility extends Ability {
         那么如何从子线程中接受消息呢?
          */
         //  接受来自子线程的消息
+        // 生成eventRunner
         EventRunner mainEventRunner1 = EventRunner.getMainEventRunner(); // 得到主线程的
-        EventHandler mainEventHandler = new EventHandler(mainEventRunner1);
+        // eventRunner绑定到mainEventHandler
+        EventHandler mainEventHandler1 = new EventHandler(mainEventRunner1){
+            @Override // 处理来自子线程的消息
+            protected void processEvent(InnerEvent event) {
+                super.processEvent(event);
+                String s = (String) event.object;
+                int eventId = event.eventId;
+                Log.info("接受来自子线程的消息: "+eventId);
+
+            }
+        };
+        // 投递到主线程
+        mainEventHandler1.postTask(new MyThread("post job"), 0, EventHandler.Priority.IMMEDIATE); // 理解投递出去
 
 
 
+
+        Log.info("执行完毕");
+        Log.info("接受来自子线程的消息: "+1);
     }
 
     public void taskTest01(){
