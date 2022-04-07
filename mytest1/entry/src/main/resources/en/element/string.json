@@ -23,6 +23,10 @@
     {
       "name": "secondability_HelloWorld",
       "value": "Hello World"
+    },
+    {
+      "name": "dataability_description",
+      "value": "hap sample empty provider"
     }
   ]
 }

@@ -12,8 +12,70 @@
         ohos:width="match_content"
         ohos:background_element="$graphic:background_ability_main"
         ohos:layout_alignment="horizontal_center"
-        ohos:text="$string:mainability_HelloWorld"
+        ohos:text="数据库操作页面"
         ohos:text_size="40vp"
+        />
+
+    <TextField
+        ohos:top_margin="50"
+        ohos:id="$+id:name"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:hint="请输入姓名"
+        ohos:hint_color="#FF646464"
+        ohos:text_size="100"
+
+        ohos:background_element="#FF42F5E6"
+
+
+
+        />
+    <TextField
+        ohos:top_margin="50"
+        ohos:id="$+id:age"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:hint="请输入年龄"
+        ohos:hint_color="#FF646464"
+        ohos:text_size="100"
+
+        ohos:background_element="#FF42F5E6"
+
+        />
+
+    <Button
+        ohos:top_margin="50"
+        ohos:id="$+id:button_connect"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="插入数据"
+        ohos:text_size="100"
+        ohos:background_element="#FF42F5E6"
+
+        />
+    <TextField
+        ohos:top_margin="50"
+        ohos:id="$+id:query"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:hint="查询名字"
+        ohos:hint_color="#FF646464"
+        ohos:text_size="100"
+
+        ohos:background_element="#FFDE54D7"
+
+        />
+
+    <Button
+        ohos:top_margin="50"
+
+        ohos:id="$+id:button_query"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="查询"
+        ohos:text_size="100"
+        ohos:background_element="#FF42F5E6"
+
         />
 
 </DirectionalLayout>

@@ -19,11 +19,10 @@ import java.security.Policy;
         super.onStart(intent);
         super.setMainRoute(MainAbilitySlice.class.getName());
 
-        eventHandletext02();
-
-
-
     }
+    
+    
+
     public void eventHandletext02(){
         EventRunner eventRunner = EventRunner.create(true); // 新建立的子线程的runner
         MyEventHandler myEventHandle = new MyEventHandler(eventRunner);

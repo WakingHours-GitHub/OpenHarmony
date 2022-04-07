@@ -54,6 +54,18 @@
         "label": "$string:entry_SecondAbility",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "name": "com.example.mytest01.DataAbility",
+        "icon": "$media:icon",
+        "description": "$string:dataability_description",
+        "type": "data",
+        "uri": "dataability://com.example.mytest01.DataAbility"
+      }
+    ],
+    "defPermissions": [
+      {
+        "name": "com.example.mytest01.DataAbilityShellProvider.PROVIDER"
       }
     ]
   }

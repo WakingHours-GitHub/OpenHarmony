@@ -23,6 +23,10 @@
     {
       "name": "entry_SecondAbility",
       "value": "entry_SecondAbility"
+    },
+    {
+      "name": "dataability_description",
+      "value": "hap sample empty provider"
     }
   ]
 }

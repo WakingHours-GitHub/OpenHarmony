@@ -14,11 +14,25 @@ ohos {
             }
         }
     }
+    compileOptions{ // 设置使用对象关系形数据库
+        annotationEnabled true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
     testImplementation 'junit:junit:4.13.1'
+    compile files(
+        "./libs/javapoet_java.jar",
+        "./libs/orm_annotations_java.jar",
+        "./libs/orm_annotations_processor_java.jar"
+
+    )
+    annotationProcessor files(
+        "./libs/javapoet_java.jar",
+        "./libs/orm_annotations_java.jar",
+        "./libs/orm_annotations_processor_java.jar"
+    )
     ohosTestImplementation 'com.huawei.ohos.testkit:runner:2.0.0.200'
 }
 decc {
