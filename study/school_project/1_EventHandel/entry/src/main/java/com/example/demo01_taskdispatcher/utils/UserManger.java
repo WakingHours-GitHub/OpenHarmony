@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManger {
-    private final static HiLogLabel HI_LOG_LABEL =
-            new HiLogLabel(HiLog.LOG_APP,0x00201,"UserManager");
+//    private final static HiLogLabel HI_LOG_LABEL =
+//            new HiLogLabel(HiLog.LOG_APP,0x00201,"UserManager");
     private Context context;
     private DBConfig config;
     private OrmContext ormContext;
@@ -66,7 +66,7 @@ public class UserManger {
         OrmPredicates predicates =
                 ormContext.where(User.class).equalTo("userId",userId);
         int flag = ormContext.delete(predicates);
-        HiLog.info(HI_LOG_LABEL,"UserManager:"+flag);
+//        HiLog.info(,"UserManager:"+flag);
 //        第七步：编写MainAbilitySlice类
         return flag>0?true:false;
     }
@@ -77,7 +77,8 @@ public class UserManger {
      */
     public boolean insertUser(User user){
         boolean flag = ormContext.insert(user);
-        HiLog.info(HI_LOG_LABEL,"UserManager:"+flag);
+        Log.info("UserManger"+flag);
+        //        HiLog.info(HI_LOG_LABEL,"UserManager:"+flag);
         return ormContext.flush();
     }
 }
