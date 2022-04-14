@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:layout_alignment="horizontal_center"
+        ohos:padding="10vp"
+        ohos:text="$string:app_name"
+        ohos:text_size="20vp"
+        ohos:top_padding="20vp"
+        />
+
+    <Text
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="$string:app_name"
+        ohos:text_size="20vp"
+        />
+
+    <Button
+        ohos:id="$+id:math_game"
+        ohos:height="100vp"
+        ohos:width="300vp"
+        ohos:background_element="$graphic:background_button"
+        ohos:layout_alignment="horizontal_center"
+        ohos:start_padding="15vp"
+        ohos:end_padding="15vp"
+        ohos:text="$string:subname"
+        ohos:text_size="30vp"
+        ohos:top_margin="20vp">
+    </Button>
+
+    <Button
+        ohos:id="$+id:picture_game"
+        ohos:height="100vp"
+        ohos:width="300vp"
+        ohos:background_element="$graphic:background_button"
+        ohos:layout_alignment="horizontal_center"
+        ohos:start_padding="15vp"
+        ohos:end_padding="15vp"
+        ohos:text="$string:pintu"
+        ohos:text_size="30vp"
+        ohos:top_margin="20vp">
+    </Button>
+
+
+    <Button
+        ohos:height="100vp"
+        ohos:width="300vp"
+        ohos:background_element="$graphic:background_button"
+        ohos:layout_alignment="horizontal_center"
+        ohos:start_padding="15vp"
+        ohos:end_padding="15vp"
+        ohos:text="$string:other"
+        ohos:text_size="30vp"
+        ohos:top_margin="20vp">
+    </Button>
+
+</DirectionalLayout>

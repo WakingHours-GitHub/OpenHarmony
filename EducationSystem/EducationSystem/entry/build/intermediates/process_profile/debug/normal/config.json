@@ -1,0 +1,117 @@
+{
+    "app": {
+        "apiVersion": {
+            "compatible": 6,
+            "releaseType": "Release",
+            "target": 6
+        },
+        "vendor": "huawei",
+        "bundleName": "com.huawei.codelab",
+        "version": {
+            "code": 1000000,
+            "name": "1.0.0"
+        }
+    },
+    "deviceConfig": {
+        
+    },
+    "module": {
+        "deviceType": [
+            "tv",
+            "tablet",
+            "phone"
+        ],
+        "abilities": [
+            {
+                "skills": [
+                    {
+                        "entities": [
+                            "entity.system.home"
+                        ],
+                        "actions": [
+                            "action.system.home",
+                            "action.system.picture",
+                            "action.system.math",
+                            "action.system.draw.rem",
+                            "action.system.draw.loc"
+                        ]
+                    }
+                ],
+                "orientation": "portrait",
+                "name": "com.huawei.codelab.MainAbility",
+                "icon": "$media:icon",
+                "description": "$string:mainability_description",
+                "label": "$string:app_name",
+                "type": "page",
+                "launchType": "standard",
+                "homeAbility": true
+            },
+            {
+                "name": "com.huawei.codelab.PictureGameServiceAbility",
+                "icon": "$media:icon",
+                "description": "$string:remoteserviceability_description",
+                "type": "service",
+                "homeAbility": false
+            },
+            {
+                "name": "com.huawei.codelab.MathGameServiceAbility",
+                "icon": "$media:icon",
+                "description": "$string:mathgameserviceability_description",
+                "type": "service",
+                "homeAbility": false
+            }
+        ],
+        "distro": {
+            "moduleType": "entry",
+            "installationFree": false,
+            "deliveryWithInstall": true,
+            "moduleName": "entry"
+        },
+        "package": "com.huawei.codelab",
+        "name": ".MyApplication",
+        "reqPermissions": [
+            {
+                "reason": "",
+                "usedScene": {
+                    "ability": [
+                        "MainAbility"
+                    ],
+                    "when": "inuse"
+                },
+                "name": "ohos.permission.servicebus.ACCESS_SERVICE"
+            },
+            {
+                "reason": "\u591a\u8bbe\u5907\u534f\u540c",
+                "usedScene": {
+                    "ability": [
+                        "MainAbility"
+                    ],
+                    "when": "always"
+                },
+                "name": "ohos.permission.DISTRIBUTED_DATASYNC"
+            },
+            {
+                "reason": "get right",
+                "usedScene": {
+                    "ability": [
+                        "MainAbility"
+                    ],
+                    "when": "inuse"
+                },
+                "name": "ohos.abilitydemo.permission.PROVIDER"
+            },
+            {
+                "name": "ohos.permission.DISTRIBUTED_DEVICE_STATE_CHANGE"
+            },
+            {
+                "name": "ohos.permission.GET_DISTRIBUTED_DEVICE_INFO"
+            },
+            {
+                "name": "ohos.permission.GRT_BUNDLE_INFO"
+            },
+            {
+                "name": "ohos.permission.INTERNET"
+            }
+        ]
+    }
+}

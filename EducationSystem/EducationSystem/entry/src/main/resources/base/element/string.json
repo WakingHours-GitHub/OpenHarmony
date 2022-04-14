@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "亲子早教系统"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "remoteserviceability_description",
+      "value": "product detail remote service"
+    },
+    {
+      "name": "mathgameserviceability_description",
+      "value": "hap sample empty service"
+    },
+    {
+      "name": "pintu",
+      "value": "益智拼图游戏"
+    },
+    {
+      "name": "other",
+      "value": "更多功能敬请期待"
+    },
+    {
+      "name": "subname",
+      "value": "基于HarmonyOS分布式技术的"
+    }
+  ]
+}
