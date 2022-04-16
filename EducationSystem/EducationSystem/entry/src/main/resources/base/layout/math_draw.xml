@@ -13,6 +13,11 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  -->
+<!--
+    计算页面, 需要有一个显示计算题的区域
+    然后有一个答题区域
+    然后有一组: 提交答案, 下一个试题, 以及实时辅导.
+-->
 <DirectionalLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:background_element="#eeeeee"
@@ -52,6 +57,7 @@
                 ohos:id="$+id:product_list"
                 ohos:orientation="vertical"
                 ohos:width="match_parent" />
+
         </DirectionalLayout>
     </DependentLayout>
 

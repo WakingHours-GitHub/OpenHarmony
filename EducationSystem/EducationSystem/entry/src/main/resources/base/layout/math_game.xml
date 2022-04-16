@@ -28,13 +28,14 @@
         ohos:text_size="38vp"
         />
 
+<!--    这个就是显示计算的页面   -->
     <DirectionalLayout
         ohos:height="match_content"
         ohos:width="match_content"
         ohos:layout_alignment="horizontal_center"
         ohos:orientation="horizontal"
         ohos:top_margin="10vp">
-
+<!--这里的text两个都需要控制, -->
         <Text
             ohos:id="$+id:number1"
             ohos:height="120vp"
@@ -65,6 +66,7 @@
             />
     </DirectionalLayout>
 
+<!--    答题区, 需要获取你的输入, 所以是TextField     -->
     <TextField
         ohos:id="$+id:answer"
         ohos:height="match_content"
@@ -76,6 +78,7 @@
         ohos:top_margin="30vp"
         />
 
+<!--    三个功能按钮, 点击后会产生, 不同的功能 -->
     <Button
         ohos:id="$+id:answer_btn"
         ohos:height="match_content"

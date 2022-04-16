@@ -5,7 +5,7 @@
     ohos:height="match_parent"
     ohos:width="match_parent"
     ohos:orientation="vertical">
-
+<!-- 亲子早教系统, 的名字 -->
     <Text
         ohos:height="match_content"
         ohos:width="match_content"

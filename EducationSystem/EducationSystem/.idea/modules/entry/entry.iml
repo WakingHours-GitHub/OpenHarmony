@@ -13,9 +13,9 @@
         <option name="HAP_OUTPUT_FOLDER_PATH" />
         <option name="PREVIEW_EXECUTE_TASK_NAME" />
         <option name="JS_MANIFEST_PATH" />
-        <option name="SUPERVISUAL_SOURCE_DIR_PATH" value="D:\zr\教学\2022年春\企业前沿理论\配套讲义和案例\SourceCodeForHarmonyOS\EducationSystem\entry\src\main\supervisual" />
-        <option name="JS_SOURCE_DIR_PATH" value="D:\zr\教学\2022年春\企业前沿理论\配套讲义和案例\SourceCodeForHarmonyOS\EducationSystem\entry\src\main\js" />
-        <option name="ETS_SOURCE_DIR_PATH" value="D:\zr\教学\2022年春\企业前沿理论\配套讲义和案例\SourceCodeForHarmonyOS\EducationSystem\entry\src\main\ets" />
+        <option name="SUPERVISUAL_SOURCE_DIR_PATH" value="D:\DevEcoStudio\Project\EducationSystem\EducationSystem\entry\src\main\supervisual" />
+        <option name="JS_SOURCE_DIR_PATH" value="D:\DevEcoStudio\Project\EducationSystem\EducationSystem\entry\src\main\js" />
+        <option name="ETS_SOURCE_DIR_PATH" value="D:\DevEcoStudio\Project\EducationSystem\EducationSystem\entry\src\main\ets" />
         <option name="MERGE_JS_SRC" value="false" />
         <option name="COMPILE_MODE_TYPE" value="d8" />
       </configuration>

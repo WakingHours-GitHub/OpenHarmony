@@ -24,9 +24,10 @@ import com.huawei.codelab.utils.CommonData;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 
+
 /**
  * MainAbility
- *
+ * mainAbility类,
  * @since 2021-01-11
  */
 public class MainAbility extends Ability {
