@@ -73,12 +73,13 @@ public class MathGameAbilitySlice extends AbilitySlice {
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
-        super.setUIContent(ResourceTable.Layout_math_game);
+        super.setUIContent(ResourceTable.Layout_math_game); // 设置UI界面.
         initView();
         setQuestion();
     }
 
     private void initView() {
+        // 初初始化
         if (findComponentById(ResourceTable.Id_number1) instanceof Text) {
             numberText1 = (Text) findComponentById(ResourceTable.Id_number1);
         }
@@ -97,7 +98,7 @@ public class MathGameAbilitySlice extends AbilitySlice {
         if (findComponentById(ResourceTable.Id_help_btn) instanceof Button) {
             helpBtn = (Button) findComponentById(ResourceTable.Id_help_btn);
         }
-
+        // 设置下面三个按钮的跳转.
         answerBtn.setClickedListener(new ButtonClick());
         nextBtn.setClickedListener(new ButtonClick());
         helpBtn.setClickedListener(new ButtonClick());
@@ -111,6 +112,9 @@ public class MathGameAbilitySlice extends AbilitySlice {
         answerText.setText("");
     }
 
+    /*
+    检查答案是否正确.
+     */
     private void checkAnswer() {
         try {
             answer = Integer.parseInt(answerText.getText());

@@ -90,10 +90,10 @@ public class MainAbilitySlice extends AbilitySlice {
         public void onClick(Component component) {
             int btnId = component.getId();
             switch (btnId) {
-                case ResourceTable.Id_math_game:
+                case ResourceTable.Id_math_game: // 如果是游戏按钮,
                     mathGame();
                     break;
-                case ResourceTable.Id_picture_game:
+                case ResourceTable.Id_picture_game: //
                     pictureGame();
                     break;
                 default:

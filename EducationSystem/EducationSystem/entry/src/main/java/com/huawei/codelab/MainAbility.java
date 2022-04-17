@@ -35,6 +35,7 @@ public class MainAbility extends Ability {
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setMainRoute(MainAbilitySlice.class.getName());
+        // 添加路由, 也就是页面路由
         addActionRoute(CommonData.PICTURE_PAGE, PictureGameAbilitySlice.class.getName());
         addActionRoute(CommonData.MATH_PAGE, MathGameAbilitySlice.class.getName());
         addActionRoute(CommonData.DRAW_PAGE, MathDrawRemSlice.class.getName());
