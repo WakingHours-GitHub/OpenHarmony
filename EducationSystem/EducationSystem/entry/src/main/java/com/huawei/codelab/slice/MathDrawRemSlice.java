@@ -53,9 +53,9 @@ import java.util.List;
 public class MathDrawRemSlice extends AbilitySlice {
     private static final String TAG = CommonData.TAG + MathDrawRemSlice.class.getSimpleName();
 
-    private DependentLayout area;
+    private DependentLayout area; // xml组件
 
-    private DrawPoint drawl;
+    private DrawPoint drawl; // java组件
 
     private float[] pointXs;
 
@@ -79,6 +79,7 @@ public class MathDrawRemSlice extends AbilitySlice {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_math_draw);
         initAndConnectDevice(intent);
+        // 将绘图的java代码和xml进行绑定.
         initDraw();
         subscribe();
     }
@@ -148,14 +149,17 @@ public class MathDrawRemSlice extends AbilitySlice {
     }
 
     private void initDraw() {
+        // 寻找组件:
         if (findComponentById(ResourceTable.Id_bac_area) instanceof DependentLayout) {
-            area = (DependentLayout) findComponentById(ResourceTable.Id_bac_area);
+            area = (DependentLayout) findComponentById(ResourceTable.Id_bac_area); // 通过id寻找组件
         }
+//      //
         drawl = new DrawPoint(this, isLocal);
         drawl.setWidth(MATCH_PARENT);
         drawl.setWidth(MATCH_PARENT);
-        area.addComponent(drawl);
-        drawl.setOnDrawBack(points -> {
+        area.addComponent(drawl); // 将drawl(java写的画图)添加到DependentLayout这个组件当中
+        // 还记得刚才定义的接口么, 在这里使用,
+        drawl.setOnDrawBack(points -> { // 使用函数式接口, 实现刚才定义的接口, 进行实时通信数据
             drawPoint(points);
         });
     }

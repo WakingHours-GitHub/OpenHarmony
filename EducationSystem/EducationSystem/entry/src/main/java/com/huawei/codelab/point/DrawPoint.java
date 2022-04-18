@@ -31,7 +31,8 @@ import java.util.List;
  *
  * @since 2021-01-11
  */
-public class DrawPoint extends Component implements Component.DrawTask {
+public class DrawPoint extends Component implements Component.DrawTask { // 本质上还是一个Component也就是一个组件
+
     private static final int STROKE_WIDTH = 15;
 
     private float[] pointXs;
@@ -40,14 +41,14 @@ public class DrawPoint extends Component implements Component.DrawTask {
 
     private boolean[] isLastPoints;
 
-    private Paint paint;
+    private Paint paint; // 画笔
 
-    private OnDrawCallBack callBack;
+    private OnDrawCallBack callBack; // 回调函数的变量.
 
     private boolean isLocal;
 
-    private List<MyPoint> localPoints = new ArrayList<>();
-
+    private List<MyPoint> localPoints = new ArrayList<>(); // 点的集合
+    // 定义一个回调接口, 获取屏幕当中移动的坐标
     private List<MyPoint> remotePoints = new ArrayList<>();
 
     /**
@@ -58,7 +59,11 @@ public class DrawPoint extends Component implements Component.DrawTask {
      */
     public DrawPoint(Context context, boolean isLocal) {
         super(context);
+
         this.isLocal = isLocal;
+        // 设定画笔
+        // 确定画图任务
+        // 通过屏幕监听器, 来判断是否进行画图操作.
         init();
     }
 
@@ -86,41 +91,50 @@ public class DrawPoint extends Component implements Component.DrawTask {
     }
 
     private void init() {
-        paint = new Paint();
+        // 设定画笔
+        paint = new Paint(); // 初始化画笔,
         paint.setAntiAlias(true);
+        // 设置样式:
         paint.setStyle(Paint.Style.STROKE_STYLE);
         paint.setStrokeWidth(STROKE_WIDTH);
-        addDrawTask(this);
+        // 添加绘画任务
+        addDrawTask(this); // 在OnDraw中确定绘画的图形
 
+        // 屏幕监听器, 监听画笔, 进行绘画
         setTouchEventListener((component, touchEvent) -> {
+            // touchEvent, 就是触发事件
+            // 获取点的坐标:
             int crtX = (int) touchEvent.getPointerPosition(touchEvent.getIndex()).getX();
             int crtY = (int) touchEvent.getPointerPosition(touchEvent.getIndex()).getY();
-            MyPoint point = new MyPoint(crtX, crtY);
+            MyPoint point = new MyPoint(crtX, crtY); // 使用x坐标和y坐标, 进行生成点,
 
-            if (touchEvent.getAction() == TouchEvent.PRIMARY_POINT_UP) {
-                point.setLastPoint(true);
-                localPoints.add(point);
-                callBack.callBack(localPoints);
+            // 接下来通过姿势来判断点的开始和结束:
+            if (touchEvent.getAction() == TouchEvent.PRIMARY_POINT_UP) { // 抬起来了, 则说明是结束点
+                point.setLastPoint(true); // 设置结束点, 为true
+                localPoints.add(point); // 加进来本地点,
+                callBack.callBack(localPoints); // 然后获取
                 System.out.println("up:" + crtY);
             }
 
-            if (touchEvent.getAction() == TouchEvent.PRIMARY_POINT_DOWN) {
-                localPoints.add(point);
+            if (touchEvent.getAction() == TouchEvent.PRIMARY_POINT_DOWN) { // 开始点,
+                localPoints.add(point); // 也需要记录下来
                 System.out.println("down:" + crtY);
             }
 
-            if (touchEvent.getAction() == TouchEvent.POINT_MOVE) {
+            if (touchEvent.getAction() == TouchEvent.POINT_MOVE) { // 移动的时候
                 localPoints.add(point);
                 System.out.println("move:" + crtY);
             }
 
-            invalidate();
-            return true;
+            invalidate(); // 更新主线程
+            return true; // 返回状态.
         });
     }
 
     @Override
     public void onDraw(Component component, Canvas canvas) {
+        // 主要实现绘图操作.
+        // 需要有点的一个坐标, 和一个容器/
         remotePoints.clear();
         if (pointXs != null && pointXs.length > 1) {
             for (int i = 0; i < pointXs.length; i++) {
@@ -149,30 +163,31 @@ public class DrawPoint extends Component implements Component.DrawTask {
         }
         Point first = null;
         Point last = null;
-        for (MyPoint myPoint : points) {
+        for (MyPoint myPoint : points) { // 遍历每个point, 后一个点的开始, 是前一个点的结束, 那么此时就应该画线
             float finalX = myPoint.getPositionX();
             float finalY = myPoint.getPositionY();
             Point finalPoint = new Point(finalX, finalY);
-            if (myPoint.isLastPoint()) {
+            if (myPoint.isLastPoint()) { // 如果不是最后一个点
                 first = null;
                 last = null;
                 continue;
             }
-            if (first == null) {
+            if (first == null) { // 初始点
                 first = finalPoint;
+//                continue;
             } else {
-                if (last != null) {
+                if (last != null) { // 如果是结束点
                     first = last;
                 }
-                last = finalPoint;
-                canvas.drawLine(first, last, paint);
+                last = finalPoint; // 最后点是最终的点.
+                canvas.drawLine(first, last, paint); // 然后画出来线
             }
         }
     }
 
     /**
      * OnDrawCallBack
-     *
+     * 定义一个接口, 以此来不断监听屏幕的信息
      * @since 2021-01-11
      */
     public interface OnDrawCallBack {
@@ -181,6 +196,9 @@ public class DrawPoint extends Component implements Component.DrawTask {
          *
          * @param points List
          */
+        // 定义一个回调函数, 用来去屏幕监听器取出屏幕上点的集合.
         void callBack(List<MyPoint> points);
+        // 所谓回调函数, 就是屏幕监听器自己自己定义自己调用, 然后使用其结果的返回值.
+
     }
 }
