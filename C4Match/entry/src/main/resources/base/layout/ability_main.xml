@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+
+    <DirectionalLayout
+        xmlns:ohos="http://schemas.huawei.com/res/ohos"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:alignment="top"
+        ohos:orientation="vertical">
+
+        <Text
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:background_element="$graphic:background_ability_main"
+            ohos:layout_alignment="horizontal_center"
+            ohos:text="综合学习系统"
+            ohos:text_size="40vp"
+            />
+
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        xmlns:ohos="http://schemas.huawei.com/res/ohos"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:alignment="center"
+        ohos:top_margin="500"
+        ohos:orientation="vertical">
+        <DirectionalLayout
+            xmlns:ohos="http://schemas.huawei.com/res/ohos"
+            ohos:height="match_parent"
+            ohos:width="match_parent"
+            ohos:alignment="center"
+            ohos:orientation="horizontal">
+
+            <Button
+                ohos:id="$+id:study_btu"
+                ohos:height="460"
+                ohos:width="460"
+                ohos:text="学习系统"
+                ohos:text_size="100"
+                ohos:text_alignment="center"
+                ohos:multiple_lines="true"
+                ohos:background_element="$graphic:background_button"
+                />
+
+            <Button
+                ohos:id="$+id:game_btu"
+                ohos:height="460"
+                ohos:width="460"
+                ohos:text="拼图游戏"
+                ohos:text_size="100"
+                ohos:multiple_lines="true"
+
+
+                ohos:text_alignment="center"
+                ohos:background_element="$graphic:background_button"
+                ohos:left_margin="50"
+                />
+
+
+
+
+        </DirectionalLayout>
+        <DirectionalLayout
+            xmlns:ohos="http://schemas.huawei.com/res/ohos"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:alignment="center"
+            ohos:top_margin="50"
+            ohos:orientation="horizontal">
+
+            <Button
+                ohos:id="$+id:introduction_btu"
+                ohos:height="460"
+                ohos:width="460"
+                ohos:text="鸿蒙分布式介绍"
+                ohos:multiple_lines="true"
+
+                ohos:text_size="80"
+                ohos:text_alignment="center"
+                ohos:background_element="$graphic:background_button"
+                />
+
+            <Button
+                ohos:id="$+id:expect_btu"
+                ohos:height="460"
+                ohos:width="460"
+                ohos:text="更多功能正在开发中..."
+
+                ohos:text_size="80"
+
+                ohos:text_alignment="center"
+                ohos:multiple_lines="true"
+
+                ohos:background_element="$graphic:background_button"
+                ohos:left_margin="50"
+                />
+
+
+
+
+        </DirectionalLayout>
+
+
+
+
+    </DirectionalLayout>
+
+</DirectionalLayout>

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!--
+选择涉笔
+-->
 <DirectionalLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:background_element="$graphic:background_card"
     ohos:height="300vp"
     ohos:orientation="vertical"
     ohos:width="match_parent">
-
+<!--
+    开始页面， 在最上面, 有选择设备和取消
+    -->
     <DependentLayout
         ohos:height="49vp"
         ohos:left_padding="12vp"

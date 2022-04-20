@@ -1,0 +1,55 @@
+{
+    "summary": {
+        "app": {
+            "bundleName": "com.huawei.codelab",
+            "version": {
+                "code": 1000000,
+                "name": "1.0.0"
+            }
+        },
+        "modules": [
+            {
+                "deviceType": [
+                    "tv",
+                    "tablet",
+                    "phone"
+                ],
+                "abilities": [
+                    {
+                        "name": "com.huawei.codelab.MainAbility",
+                        "label": "$string:app_name"
+                    },
+                    {
+                        "name": "com.huawei.codelab.PictureGameServiceAbility"
+                    },
+                    {
+                        "name": "com.huawei.codelab.MathGameServiceAbility"
+                    }
+                ],
+                "distro": {
+                    "moduleType": "entry",
+                    "installationFree": false,
+                    "deliveryWithInstall": true,
+                    "moduleName": "entry"
+                },
+                "apiVersion": {
+                    "compatible": 6,
+                    "releaseType": "Release",
+                    "target": 6
+                }
+            }
+        ]
+    },
+    "packages": [
+        {
+            "deviceType": [
+                "tv",
+                "tablet",
+                "phone"
+            ],
+            "moduleType": "entry",
+            "deliveryWithInstall": true,
+            "name": "entry-debug-rich-unsigned"
+        }
+    ]
+}

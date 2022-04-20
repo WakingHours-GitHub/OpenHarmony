@@ -150,28 +150,30 @@ public class MathGameAbilitySlice extends AbilitySlice {
         LogUtil.info(TAG, "startLocalFa......");
         Intent intent = new Intent();
         intent.setParam(CommonData.KEY_REMOTE_DEVICEID, deviceId);
-        intent.setParam(CommonData.KEY_IS_LOCAL, true);
-        Operation operation = new Intent.OperationBuilder().withBundleName(getBundleName())
+        intent.setParam(CommonData.KEY_IS_LOCAL, true); // 设置标识, 表示本地画板
+        Operation operation = new Intent.OperationBuilder().withBundleName(getBundleName()) // 使用Intent.Operation来去拉取本地画板
             .withAbilityName(CommonData.ABILITY_MAIN)
             .withAction(CommonData.DRAW_PAGE)
             .build();
         intent.setOperation(operation);
-        startAbility(intent);
+        startAbility(intent); // 开启意图
     }
 
     private void startRemoteFa(String deviceId) {
         LogUtil.info(TAG, "startRemoteFa......");
         String localDeviceId =
             KvManagerFactory.getInstance().createKvManager(new KvManagerConfig(this)).getLocalDeviceInfo().getId();
+//        KvManagerConfig(this)).getLocalDeviceInfo().getId() 通过这个API进行获取地址,
+        // 本地端和远程端需要互相知道双方的地址, 来去进行实时互通
         Intent intent = new Intent();
-        intent.setParam(CommonData.KEY_REMOTE_DEVICEID, localDeviceId);
+        intent.setParam(CommonData.KEY_REMOTE_DEVICEID, localDeviceId); // 设置远程画板
         intent.setParam(CommonData.KEY_IS_LOCAL, false);
         Operation operation = new Intent.OperationBuilder().withDeviceId(deviceId)
             .withBundleName(getBundleName())
             .withAbilityName(CommonData.ABILITY_MAIN)
             .withAction(CommonData.DRAW_PAGE)
             .withFlags(Intent.FLAG_ABILITYSLICE_MULTI_DEVICE)
-            .build();
+            .build(); // 进行build
         intent.setOperation(operation);
         startAbility(intent);
     }

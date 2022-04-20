@@ -30,10 +30,11 @@ import java.util.Optional;
 
 /**
  * DevicesListAdapter
- *
+ * 总体布局文件,
  * @since 2021-01-11
  */
 public class DevicesListAdapter extends BaseItemProvider {
+    // 设定组网中的设备.
     private static final int SUBSTRING_START = 0;
 
     private static final int SUBSTRING_END = 4;
@@ -88,7 +89,7 @@ public class DevicesListAdapter extends BaseItemProvider {
                 viewHolder = (ViewHolder) mComponent.getTag();
             }
         }
-        if (viewHolder != null) {
+        if (viewHolder != null) { // 不是空的那么就直接得到布局就可以了.
             viewHolder.devicesName.setText(deviceInfoList.get(position).getDeviceName());
             String deviceId = deviceInfoList.get(position).getDeviceId();
             deviceId = deviceId.substring(SUBSTRING_START, SUBSTRING_END) + "******"

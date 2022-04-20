@@ -27,7 +27,7 @@
 
         <Image
             ohos:left_margin="10vp"
-            ohos:image_src="$media:device.png"
+            ohos:image_src="$media:device"
             ohos:height="match_content"
             ohos:width="match_content" />
 

@@ -225,7 +225,7 @@ public class MathDrawRemSlice extends AbilitySlice {
 
     /**
      * Establish a remote connection
-     *
+     * 消息体,
      * @since 2021-01-11
      */
     class MathRemoteProxy implements IRemoteBroker {

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources> 
+  <string name="app_name">"亲子早教系统"</string>
+  <string name="mainability_description">"Java_Phone_Empty Feature Ability"</string>
+  <string name="mathgameserviceability_description">"hap sample empty service"</string>
+  <string name="remoteserviceability_description">"product detail remote service"</string>
+</resources>

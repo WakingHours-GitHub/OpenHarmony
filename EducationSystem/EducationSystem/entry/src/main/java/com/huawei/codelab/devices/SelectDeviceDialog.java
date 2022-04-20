@@ -78,6 +78,7 @@ public class SelectDeviceDialog {
      * Show Dialog
      */
     public void show() {
+        // 显示对话框
         commonDialog.show();
     }
 
@@ -92,6 +93,6 @@ public class SelectDeviceDialog {
          *
          * @param deviceInfo DeviceInfo
          */
-        void callBack(DeviceInfo deviceInfo);
+        void callBack(DeviceInfo deviceInfo); // 回调函数
     }
 }
