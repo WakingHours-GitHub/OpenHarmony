@@ -5,5 +5,5 @@
     <corners
         ohos:radius="40"/>
     <solid
-        ohos:color="#007CFD"/>
+        ohos:color="#FF0074EE"/>
 </shape>

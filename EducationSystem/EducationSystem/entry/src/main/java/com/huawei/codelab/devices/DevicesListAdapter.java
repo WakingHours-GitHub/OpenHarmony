@@ -34,7 +34,7 @@ import java.util.Optional;
  * @since 2021-01-11
  */
 public class DevicesListAdapter extends BaseItemProvider {
-    // 设定组网中的设备.
+    // 设定组网中的设备数量.
     private static final int SUBSTRING_START = 0;
 
     private static final int SUBSTRING_END = 4;

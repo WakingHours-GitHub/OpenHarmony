@@ -45,6 +45,24 @@
         "label": "$string:entry_MainAbility",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.c4match.StudySystem",
+        "icon": "$media:icon",
+        "description": "$string:sutdysystem_description",
+        "label": "$string:entry_SutdySystem",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.c4match.GameSystem",
+        "icon": "$media:icon",
+        "description": "$string:gamesystem_description",
+        "label": "$string:entry_GameSystem",
+        "type": "page",
+        "launchType": "standard"
       }
     ]
   }

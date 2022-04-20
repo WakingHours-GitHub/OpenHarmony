@@ -11,6 +11,30 @@
     {
       "name": "mainability_HelloWorld",
       "value": "Hello World"
+    },
+    {
+      "name": "sutdysystem_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "sutdysystem_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_SutdySystem",
+      "value": "entry_SutdySystem"
+    },
+    {
+      "name": "gamesystem_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "gamesystem_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "entry_GameSystem",
+      "value": "entry_GameSystem"
     }
   ]
 }
