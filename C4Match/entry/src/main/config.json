@@ -33,12 +33,16 @@
               "entity.system.home"
             ],
             "actions": [
-              "action.system.home"
+              "action.system.home",
+              "action.system.picture",
+              "action.system.math",
+              "action.system.draw.rem",
+              "action.system.draw.loc"
             ]
           }
         ],
-        "orientation": "unspecified",
-        "visible": true,
+        "orientation": "portrait",
+
         "name": "com.example.c4match.MainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
@@ -47,12 +51,11 @@
         "launchType": "standard"
       },
       {
-        "orientation": "unspecified",
         "name": "com.example.c4match.StudySystem",
         "icon": "$media:icon",
         "description": "$string:sutdysystem_description",
         "label": "$string:entry_SutdySystem",
-        "type": "page",
+        "type": "service",
         "launchType": "standard"
       },
       {

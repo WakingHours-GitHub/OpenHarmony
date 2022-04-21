@@ -18,16 +18,13 @@
 package com.example.c4match.slice;
 import static ohos.security.SystemPermission.DISTRIBUTED_DATASYNC;
 
-import com.example.c4match.utils.Log;
 import com.example.c4match.ResourceTable;
 import com.example.c4match.devices.SelectDeviceDialog;
-import com.example.c4match.utils.*;
+import com.example.c4match.utils.CommonData;
+import com.example.c4match.utils.CommonUtil;
+import com.example.c4match.utils.Log;
 
-//import com.huawei.codelab.ResourceTable;
-//import com.huawei.codelab.devices.SelectDeviceDialog;
-//import com.huawei.codelab.utils.CommonData;
-//import com.huawei.codelab.utils.CommonUtil;
-//import com.huawei.codelab.utils.Log;
+
 
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.ability.IAbilityConnection;
@@ -172,7 +169,9 @@ public class GameSystemSlice extends AbilitySlice {
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
+        // 加载页面
         super.setUIContent(ResourceTable.Layout_ability_game_system);
+
         grantPermission(getContext());
         initView(intent);
         initRemoteView(intent);
