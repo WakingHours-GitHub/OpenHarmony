@@ -2,19 +2,13 @@ package com.example.c4match;
 
 import com.example.c4match.slice.SutdySystemSlice;
 import com.example.c4match.utils.CommonData;
+import com.example.c4match.utils.Log;
 import ohos.aafwk.ability.Ability;
-import ohos.aafwk.ability.OnClickListener;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
-import ohos.agp.components.AdaptiveBoxLayout;
-import ohos.agp.render.Region;
 import ohos.event.commonevent.CommonEventData;
 import ohos.event.commonevent.CommonEventManager;
-import ohos.media.image.PixelMap;
 import ohos.rpc.*;
-
-import java.lang.annotation.Target;
-import java.security.PrivateKey;
 
 public class StudySystem extends Ability {
     private final String TAG = this.getClass().getName();

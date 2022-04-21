@@ -1,7 +1,9 @@
 package com.example.c4match.slice;
 
 import com.example.c4match.GameSystem;
-import com.example.c4match.Log;
+import com.example.c4match.MainAbility;
+import com.example.c4match.utils.CommonData;
+import com.example.c4match.utils.Log;
 import com.example.c4match.ResourceTable;
 import com.example.c4match.StudySystem;
 import ohos.aafwk.ability.AbilitySlice;
@@ -90,7 +92,7 @@ public class MainAbilitySlice extends AbilitySlice {
                 .withDeviceId("")
                 .withBundleName(this.getBundleName())
                 .withAbilityName(StudySystem.class.getName())
-//                .withAction()
+                .withAction(CommonData.MATH_DRAW_EVENT)
                 .build();
         studyIntent.setOperation(operation);
         startAbility(studyIntent);
@@ -102,8 +104,8 @@ public class MainAbilitySlice extends AbilitySlice {
         Operation operation = new Intent.OperationBuilder()
                 .withDeviceId("")
                 .withBundleName(this.getBundleName())
-                .withAbilityName(GameSystem.class.getName())
-//                .withAction()
+                .withAbilityName(MainAbility.class.getName())
+                .withAction(CommonData.PICTURE_PAGE)
                 .build();
         gameIntent.setOperation(operation);
         startAbility(gameIntent);

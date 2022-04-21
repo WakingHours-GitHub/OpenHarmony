@@ -18,7 +18,7 @@ package com.example.c4match.utils;
 import com.example.c4match.GameSystem;
 import com.example.c4match.MainAbility;
 import com.example.c4match.StudySystem;
-
+import com.example.*;
 //import com.huawei.codelab.MainAbility;
 //import com.huawei.codelab.MathGameServiceAbility;
 //import com.huawei.codelab.PictureGameServiceAbility;
@@ -52,7 +52,9 @@ public class CommonData {
     /**
      * picture page action flag
      */
+//    public static final String PICTURE_PAGE = "action.system.picture";
     public static final String PICTURE_PAGE = "action.system.picture";
+
 
     /**
      * math page action flag
@@ -72,7 +74,7 @@ public class CommonData {
     /**
      * picture game event
      */
-    public static final String PICTURE_GAME_EVENT = "com.huawei.picturegame";
+    public static final String PICTURE_GAME_EVENT = "com.example.c4match.gamesystem";
 
     /**
      * key remote device id
