@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+
+    <ScrollView
+        ohos:id="$+id:scrollview"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:rebound_effect="true"
+        >
+
+        <!--ohos:rebound_effect="true" 设置回弹效果-->
+        <!-- ohos:match_viewport="true" 设置拉伸匹配效果 该属性在ScrollView的子组件无法填充满ScrollView时使用，
+        默认为false，子组件按照自身设置大小展示，设置为true时，子组件填充满ScrollView。-->
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:left_margin="20vp"
+            ohos:alignment="top"
+            ohos:orientation="vertical"
+            ohos:right_margin="20vp">
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text="实时辅导学习系统使用说明"
+                ohos:text_size="30vp"
+                ohos:multiple_lines="true"
+
+                />
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text="一. 学习模块"
+                ohos:text_size="20vp"
+
+                />
+
+
+
+
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text="一. 游戏模块"
+                ohos:text_size="20vp"
+
+                />
+
+
+
+        </DirectionalLayout>
+
+    </ScrollView>
+
+<!--    <DirectionalLayout-->
+<!--        ohos:height="match_content"-->
+<!--        ohos:width="match_content"-->
+<!--        ohos:top_margin="30vp"-->
+<!--        ohos:bottom_margin="60vp"-->
+<!--        ohos:orientation="horizontal"-->
+<!--        >-->
+
+<!--        <Button-->
+<!--            ohos:id="$+id:option_scroll"-->
+<!--            ohos:height="match_content"-->
+<!--            ohos:width="match_content"-->
+<!--            ohos:background_element="#000000"-->
+<!--            ohos:text="根据像素平滑滚动操作"-->
+<!--            ohos:text_color="#ffffff"-->
+<!--            ohos:text_size="17vp"/>-->
+
+<!--        <Button-->
+<!--            ohos:id="$+id:option_scroll2"-->
+<!--            ohos:height="match_content"-->
+<!--            ohos:width="match_content"-->
+<!--            ohos:left_margin="20vp"-->
+<!--            ohos:background_element="#000000"-->
+<!--            ohos:text="滚动到制定位置"-->
+<!--            ohos:text_color="#ffffff"-->
+<!--            ohos:text_size="17vp"/>-->
+<!--    </DirectionalLayout>-->
+
+</DirectionalLayout>

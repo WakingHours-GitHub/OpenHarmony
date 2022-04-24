@@ -21,6 +21,12 @@
             ohos:text="综合学习系统"
             ohos:text_size="40vp"
             />
+        <Image
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:image_src="$media:work"
+            ohos:layout_alignment="center"
+            />
 
     </DirectionalLayout>
 
@@ -29,57 +35,95 @@
         ohos:height="match_content"
         ohos:width="match_content"
         ohos:alignment="center"
-        ohos:top_margin="500"
         ohos:orientation="vertical">
+
         <DirectionalLayout
             xmlns:ohos="http://schemas.huawei.com/res/ohos"
             ohos:height="match_parent"
             ohos:width="match_parent"
             ohos:alignment="center"
             ohos:orientation="horizontal">
-
-            <Button
+            <DirectionalLayout
                 ohos:id="$+id:study_btu"
-                ohos:height="460"
+                xmlns:ohos="http://schemas.huawei.com/res/ohos"
+                ohos:height="450"
                 ohos:width="460"
-                ohos:text="学习系统"
-                ohos:text_size="100"
-                ohos:text_alignment="center"
-                ohos:multiple_lines="true"
+                ohos:alignment="center"
                 ohos:background_element="$graphic:background_button"
-                />
+
+                ohos:orientation="vertical">
+                <Image
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:image_src="$media:study"
+                    />
+
+                <Text
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:text="学习系统"
+                    ohos:text_color="#FFFFFFFF"
+                    ohos:text_size="100"
+                    ohos:text_alignment="center"
+                    ohos:multiple_lines="true"
+                    />
+
+            </DirectionalLayout>
+
+            <DirectionalLayout
+                ohos:id="$+id:game_btu"
+                xmlns:ohos="http://schemas.huawei.com/res/ohos"
+                ohos:height="450"
+                ohos:width="460"
+                ohos:alignment="center"
+                ohos:background_element="$graphic:background_button"
+                ohos:left_margin="30"
+
+
+                ohos:orientation="vertical">
+                <Image
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:image_src="$media:game"
+                    />
+
+                <Text
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:text="拼图游戏"
+                    ohos:text_size="100"
+                    ohos:text_color="#FFFFFFFF"
+
+                    ohos:text_alignment="center"
+                    ohos:multiple_lines="true"
+                    />
+
+            </DirectionalLayout>
 
             <Button
-                ohos:id="$+id:game_btu"
-                ohos:height="460"
-                ohos:width="460"
-                ohos:text="拼图游戏"
-                ohos:text_size="100"
-                ohos:multiple_lines="true"
-
-
-                ohos:text_alignment="center"
-                ohos:background_element="$graphic:background_button"
-                ohos:left_margin="50"
-                />
-
+                ohos:id="$+id:text6"
+                ohos:height="match_parent"
+                ohos:width="match_parent"
 
 
 
         </DirectionalLayout>
+
         <DirectionalLayout
             xmlns:ohos="http://schemas.huawei.com/res/ohos"
             ohos:height="match_content"
             ohos:width="match_content"
             ohos:alignment="center"
-            ohos:top_margin="50"
+            ohos:top_margin="30"
             ohos:orientation="horizontal">
 
             <Button
                 ohos:id="$+id:introduction_btu"
-                ohos:height="460"
+                ohos:height="450"
                 ohos:width="460"
                 ohos:text="鸿蒙分布式介绍"
+                ohos:text_color="#FFFFFFFF"
+
                 ohos:multiple_lines="true"
 
                 ohos:text_size="80"
@@ -88,18 +132,19 @@
                 />
 
             <Button
-                ohos:id="$+id:expect_btu"
-                ohos:height="460"
+                ohos:id="$+id:explain_btu"
+                ohos:height="450"
                 ohos:width="460"
-                ohos:text="更多功能正在开发中..."
+                ohos:text="使用说明"
 
                 ohos:text_size="80"
+                ohos:text_color="#FFFFFFFF"
 
                 ohos:text_alignment="center"
                 ohos:multiple_lines="true"
 
                 ohos:background_element="$graphic:background_button"
-                ohos:left_margin="50"
+                ohos:left_margin="30"
                 />
 
 

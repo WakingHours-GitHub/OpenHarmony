@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="horizontal_center"
+    ohos:orientation="vertical">
+
+
+    <DirectionalLayout
+        xmlns:ohos="http://schemas.huawei.com/res/ohos"
+        ohos:height="600"
+        ohos:width="1000"
+        ohos:orientation="horizontal"
+        ohos:alignment="horizontal_center"
+        ohos:top_margin="10vp"
+        ohos:background_element="$graphic:background_answer_area"
+
+        >
+
+        <Text
+            ohos:height="match_parent"
+            ohos:width="match_parent"
+            ohos:text="题目区域"
+            ohos:text_size="30vp"
+            ohos:text_color="#FFFFFFFF"
+            ohos:text_alignment="center"
+
+            />
+
+        <Image
+            ohos:height="match_parent"
+            ohos:width="match_parent"
+            ohos:image_src="null"
+            />
+
+
+
+    </DirectionalLayout>
+
+
+
+</DirectionalLayout>

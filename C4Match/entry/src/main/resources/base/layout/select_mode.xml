@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="远程端"
+        ohos:text_size="40vp"
+        ohos:text_alignment="center"
+        ohos:top_margin="20"
+        ohos:multiple_lines="true"
+
+
+        />
+    <Text
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="请选择要出题的方式"
+        ohos:text_size="40vp"
+        ohos:text_alignment="center"
+        ohos:top_margin="30"
+        ohos:multiple_lines="true"
+
+
+        />
+
+    <DirectionalLayout
+        xmlns:ohos="http://schemas.huawei.com/res/ohos"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:top_margin="100vp"
+
+        ohos:orientation="vertical">
+
+        
+        <Button
+            ohos:id="$+id:select_mode_1_btu"
+            ohos:height="match_content"
+            ohos:width="1000"
+            ohos:text="拍照上传"
+            ohos:text_size="30vp"
+            ohos:bottom_margin="60"
+
+            ohos:padding="10"
+            ohos:text_alignment="center"
+            ohos:layout_alignment="center"
+            ohos:background_element="$graphic:background_button"
+            />
+
+        <Button
+            ohos:id="$+id:select_mode_2_btu"
+
+            ohos:height="match_content"
+            ohos:width="1000"
+            ohos:text="语音识别"
+            ohos:text_size="30vp"
+            ohos:bottom_margin="60"
+
+            ohos:padding="10"
+            ohos:text_alignment="center"
+            ohos:layout_alignment="center"
+            ohos:background_element="$graphic:background_button"
+            />
+
+
+        <Button
+            ohos:id="$+id:select_mode_3_btu"
+
+            ohos:height="match_content"
+            ohos:width="1000"
+            ohos:text="文字输入"
+            ohos:text_size="30vp"
+            ohos:bottom_margin="60"
+
+            ohos:padding="10"
+            ohos:text_alignment="center"
+            ohos:layout_alignment="center"
+            ohos:background_element="$graphic:background_button"
+            />
+
+
+
+
+
+
+
+
+
+
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        xmlns:ohos="http://schemas.huawei.com/res/ohos"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:layout_alignment="right"
+        ohos:alignment="right"
+        ohos:orientation="horizontal"
+        ohos:top_margin="800"
+        ohos:right_margin="50"
+        
+        >
+            <Button
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text="继续 > "
+                ohos:text_size="20vp"
+                ohos:text_alignment="center"
+                ohos:layout_alignment="left"
+
+
+                ohos:padding="20"
+                ohos:background_element="$graphic:background_button"
+
+
+                />
+
+
+
+
+
+
+
+
+    </DirectionalLayout>
+
+
+
+
+
+</DirectionalLayout>
