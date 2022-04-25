@@ -46,6 +46,7 @@
                     ohos:text_size="38fp"
                     ohos:vertical_center="true"
                     ohos:width="match_content" />
+
             </DependentLayout>
 
             <DirectionalLayout
@@ -55,6 +56,25 @@
                 ohos:width="match_parent" />
 
         </DirectionalLayout>
+        <Button
+            ohos:id="$+id:clear_btu"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:text="清屏"
+            ohos:text_color="#FFFFFF"
+            ohos:text_size="80"
+            ohos:text_alignment="right"
+            ohos:top_margin="1700"
+            ohos:left_margin="850"
+
+            ohos:padding="20"
+            ohos:background_element="$graphic:background_button"
+            />
+
+
     </DependentLayout>
+
+
+
 
 </DirectionalLayout>

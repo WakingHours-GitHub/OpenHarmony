@@ -132,7 +132,7 @@ public class MathGameAbilitySlice extends AbilitySlice {
     }
 
     private void getDevices() {
-        if (devices.size() > 0) {
+        if (devices.size() > 0) { // devices 列表
             devices.clear();
         }
         List<DeviceInfo> deviceInfos =
@@ -143,12 +143,13 @@ public class MathGameAbilitySlice extends AbilitySlice {
     }
 
     private void showDevicesDialog() {
+        // 选择设备
         new SelectDeviceDialog(this, devices, deviceInfo -> {
             startLocalFa(deviceInfo.getDeviceId());
             startRemoteFa(deviceInfo.getDeviceId());
         }).show();
     }
-
+    // 开启远程端
     private void startLocalFa(String deviceId) {
         LogUtil.info(TAG, "startLocalFa......");
         Intent intent = new Intent();
@@ -156,7 +157,7 @@ public class MathGameAbilitySlice extends AbilitySlice {
         intent.setParam(CommonData.KEY_IS_LOCAL, true); // 设置标识, 表示本地画板
         Operation operation = new Intent.OperationBuilder().withBundleName(getBundleName()) // 使用Intent.Operation来去拉取本地画板
             .withAbilityName(CommonData.ABILITY_MAIN)
-            .withAction(CommonData.DRAW_PAGE)
+            .withAction(CommonData.DRAW_PAGE) //
             .build();
         intent.setOperation(operation);
         startAbility(intent); // 开启意图

@@ -100,10 +100,6 @@
 
             </DirectionalLayout>
 
-            <Button
-                ohos:id="$+id:text6"
-                ohos:height="match_parent"
-                ohos:width="match_parent"
 
 
 
