@@ -37,8 +37,8 @@ public class MainAbilitySlice extends AbilitySlice {
     public void onStart(Intent intent) {
         super.onStart(intent);
 //        super.setUIContent(ResourceTable.Layout_ability_main); // 加载页面
-
-        select_model();
+        setUIContent(ResourceTable.Layout_recieve_problem);
+//        select_model();
 
 //        applyPermission(); // 申请权限
 //        initFunction(); // 初始化功能
@@ -47,6 +47,8 @@ public class MainAbilitySlice extends AbilitySlice {
 
     private void select_model(){
         setUIContent(ResourceTable.Layout_select_mode);
+
+
         Button select_mode_but1 = findComponentById(ResourceTable.Id_select_mode_1_btu);
         Button select_mode_but2 = findComponentById(ResourceTable.Id_select_mode_2_btu);
         Button select_mode_but3 = findComponentById(ResourceTable.Id_select_mode_3_btu);

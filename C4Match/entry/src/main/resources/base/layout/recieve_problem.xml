@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="本地端"
+        ohos:text_size="20vp"
+        ohos:text_alignment="center"
+        ohos:top_margin="20"
+        ohos:multiple_lines="true"
+
+
+        />
+
+    <DirectionalLayout
+        ohos:height="400"
+        ohos:width="1000"
+        ohos:background_element="$graphic:background_answer_area"
+        ohos:orientation="vertical"
+        ohos:layout_alignment="center"
+        ohos:top_margin="50"
+        >
+        <Image
+            ohos:height="400"
+            ohos:width="800"
+            ohos:layout_alignment="center"
+            ohos:alpha="1.5"
+            ohos:scale_mode="zoom_center"
+            ohos:image_src="$media:test_img"
+
+
+            />
+
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:orientation="horizontal"
+        ohos:top_margin="50"
+
+
+        >
+        <Text
+
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:text="请输入答案: "
+            ohos:text_size="80"
+            ohos:left_margin="30"
+            ohos:text_alignment="center"
+            />
+
+        <TextField
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:hint="wait.."
+            ohos:text_size="80"
+            ohos:text_alignment="center"
+            ohos:padding="15"
+            ohos:background_element="$graphic:answer_arer"
+            />
+
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        xmlns:ohos="http://schemas.huawei.com/res/ohos"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:orientation="vertical"
+        ohos:layout_alignment="vertical_center"
+        ohos:top_margin="300"
+        ohos:alignment="horizontal_center"
+        >
+
+
+        <Button
+            ohos:top_margin="20"
+            ohos:height="match_content"
+            ohos:width="900"
+            ohos:text="获取题目"
+            ohos:text_size="80"
+            ohos:text_color="white"
+            ohos:padding="20"
+            ohos:background_element="$graphic:background_button"
+            ohos:text_alignment="center"
+            />
+
+        <Button
+            ohos:top_margin="50"
+            ohos:height="match_content"
+            ohos:width="900"
+
+            ohos:text="提交答案"
+            ohos:text_size="80"
+            ohos:text_color="white"
+            ohos:text_alignment="center"
+            ohos:padding="20"
+            ohos:background_element="$graphic:background_button"
+
+        />
+
+        <Button
+            ohos:top_margin="50"
+            ohos:height="match_content"
+            ohos:width="900"
+
+            ohos:text="演算画板"
+            ohos:text_size="80"
+            ohos:text_color="white"
+            ohos:text_alignment="center"
+            ohos:padding="20"
+            ohos:background_element="$graphic:background_button"
+
+            />
+
+
+
+        <Button
+            ohos:top_margin="50"
+            ohos:height="match_content"
+            ohos:width="900"
+
+            ohos:text="远程辅导"
+            ohos:text_size="80"
+            ohos:text_color="white"
+            ohos:padding="20"
+            ohos:background_element="$graphic:background_button"
+            ohos:text_alignment="center"
+            />
+
+
+    </DirectionalLayout>
+
+
+</DirectionalLayout>
